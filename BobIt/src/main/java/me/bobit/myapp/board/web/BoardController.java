@@ -60,7 +60,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/deleteBoard/{boardNo}")
-	String delete(@PathVariable Long boardNo) throws Exception {
+	String deleteBoard(@PathVariable Long boardNo) throws Exception {
 		service.deleteBoard(boardNo);
 		
 		return "redirect:../boardList";

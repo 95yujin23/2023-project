@@ -43,7 +43,7 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public void deleteBoard(Long boardId) {
-		sql.delete("board.deleteboard", boardId);
+		sql.update("board.deleteboard", boardId);
 	}
 
 }

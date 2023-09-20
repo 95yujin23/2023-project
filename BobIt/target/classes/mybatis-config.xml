@@ -9,10 +9,12 @@
 	<typeAliases>
 		<typeAlias type="me.bobit.myapp.book.Book" alias="Book"/>
 		<typeAlias type="me.bobit.myapp.board.service.BoardVO" alias="BoardVO"/>
+		<typeAlias type="me.bobit.myapp.member.service.MemberVO" alias="MemberVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/book.xml"/>
 		<mapper resource="mybatis/board.xml"/>
+		<mapper resource="mybatis/member.xml"/>
 	</mappers>
 </configuration>

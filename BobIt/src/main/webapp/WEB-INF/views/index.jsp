@@ -15,7 +15,7 @@
 <body>
 	<div class="container">
 		<div>
-			<h1>폴리북스</h1>
+			<h1>밥잇 임시페이지</h1>
 		</div>
 		<nav>
 
@@ -23,9 +23,7 @@
 		<div>
 			<ul>
 				<li><a href="board/boardList">게시판CRUD</a>
-				<li><a href="book/list">도서관리</a>
-				<li><a href="customer/list">고객관리</a>
-				<li><a href="orders/list">주문관리</a>				
+				<li><a href="member/memberList">맴버관리</a>
 			</ul>
 		</div>
 	</div>

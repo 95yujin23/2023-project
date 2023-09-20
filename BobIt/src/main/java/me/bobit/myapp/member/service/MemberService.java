@@ -20,4 +20,7 @@ public interface MemberService {
 	
 	//회원 탈퇴하기
 	void deleteMember(String memNick) throws Exception;
+	
+	//회원 강퇴하기
+	void kickMember(String memNick) throws Exception;
 }

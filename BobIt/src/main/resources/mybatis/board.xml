@@ -32,18 +32,20 @@
 		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
 		]]>
 		</if> -->
-				BOARD ORDER BY BOARD_NO		
+				BOARD 
+				WHERE BOARD_USE='y'
+				ORDER BY BOARD_NO		
 	</select>
 
 	<select id="selectboard" resultType="BoardVO">
 		SELECT * FROM BOARD
-		WHERE BOARD_NO = #{boardNo}
+		WHERE BOARD_NO = #{boardNo} AND BOARD_USE='y'
 	</select>
 	
 	<insert id="insertboard">
 	INSERT INTO BOARD
-	(BOARD_NO, MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE)
-	VALUES (#{boardNo}, #{memNick}, #{boardSj}, #{boardCn},  now())
+	(MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE)
+	VALUES (#{memNick}, #{boardSj}, #{boardCn},  now())
 	</insert>
 	
 	<update id="updateboard">
@@ -52,9 +54,10 @@
 	WHERE BOARD_NO=#{boardNo}
 	</update>
 	
-	<delete id="deleteboard">
-	DELETE FROM BOARD
+	<update id="deleteboard">
+	UPDATE BOARD SET
+	BOARD_USE='n'
 	WHERE BOARD_NO=#{boardNo}
-	</delete>
+	</update>
 	
 </mapper>

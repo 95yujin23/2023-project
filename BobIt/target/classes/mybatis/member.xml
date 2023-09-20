@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="board">
+<mapper namespace="member">
 <!-- 	<sql id="search">
 		SELECT * FROM BOARD 
 		<where>
@@ -20,10 +20,10 @@
 	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
-		BOARD ORDER BY BOARD_NO
+		MEMBER ORDER BY MEM_ID
 	</select>
 
-	<select id="selectboardlist" resultType="BoardVO">
+	<select id="selectmemberlist" resultType="MemberVO">
 		SELECT * FROM
 			<!-- (SELECT sub.*, ROWNUM rnum FROM
  				(<include refid="search"></include>) sub)				
@@ -32,32 +32,37 @@
 		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
 		]]>
 		</if> -->
-				BOARD 
-				WHERE BOARD_USE='y'
-				ORDER BY BOARD_NO		
+				MEMBER
+				ORDER BY MEM_ID		
 	</select>
 
-	<select id="selectboard" resultType="BoardVO">
-		SELECT * FROM BOARD
-		WHERE BOARD_NO = #{boardNo} AND BOARD_USE='y'
+	<select id="selectmember" resultType="MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEM_NICK = #{memNick}
 	</select>
 	
-	<insert id="insertboard">
-	INSERT INTO BOARD
-	(MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE)
-	VALUES (#{memNick}, #{boardSj}, #{boardCn},  now())
+	<insert id="insertmember">
+	INSERT INTO MEMBER
+	(MEM_NICK, MEM_ID, MEM_PWD, MEM_MAIL, MEM_FM, MEM_AGE, MEM_AREA)
+	VALUES (#{memNick}, #{memId}, #{memPwd},  #{memMail}, #{memFm}, #{memAge}, #{memArea})
 	</insert>
 	
-	<update id="updateboard">
-	UPDATE BOARD SET 
-	BOARD_SJ=#{boardSj}, BOARD_CN=#{boardCn}
-	WHERE BOARD_NO=#{boardNo}
+	<update id="updatemember">
+	UPDATE MEMBER SET 
+	MEM_PWD=#{memPwd}, MEM_MAIL=#{memMail}, MEM_AREA=#{memArea}
+	WHERE MEM_NICK=#{memNick}
 	</update>
 	
-	<update id="deleteboard">
-	UPDATE BOARD SET
-	BOARD_USE='n'
-	WHERE BOARD_NO=#{boardNo}
+	<update id="deletemember">
+	UPDATE MEMBER SET
+	MEM_CHECK='n'
+	WHERE MEM_NICK=#{memNick}
+	</update>
+	
+	<update id="kickmember">
+	UPDATE MEMBER SET
+	MEM_CHECK='x'
+	WHERE MEM_NICK=#{memNick}
 	</update>
 	
 </mapper>

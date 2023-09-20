@@ -13,11 +13,7 @@
 	</div>
 	<form method="post">
 <div>
-	<div>
-		<label>글번호 : </label>
-		<input type="number" name="boardNo">
-	</div>
-
+	
 	<div>
 		<label>제목 : </label>
 		<input type="text" name="boardSj">
