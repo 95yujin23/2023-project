@@ -2,11 +2,17 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+	<settings>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
 	<typeAliases>
 		<typeAlias type="me.bobit.myapp.book.Book" alias="Book"/>
+		<typeAlias type="me.bobit.myapp.board.service.BoardVO" alias="BoardVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/book.xml"/>
+		<mapper resource="mybatis/board.xml"/>
 	</mappers>
 </configuration>

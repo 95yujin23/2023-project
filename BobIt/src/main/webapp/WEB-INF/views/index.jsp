@@ -22,6 +22,7 @@
 		</nav>
 		<div>
 			<ul>
+				<li><a href="board/boardList">게시판CRUD</a>
 				<li><a href="book/list">도서관리</a>
 				<li><a href="customer/list">고객관리</a>
 				<li><a href="orders/list">주문관리</a>				
