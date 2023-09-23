@@ -30,8 +30,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardVO selectBoard(Long boardId) throws Exception {
-		return dao.selectBoard(boardId);
+	public BoardVO selectBoard(Long boardNo) throws Exception {
+		return dao.selectBoard(boardNo);
 	}
 
 	@Override
@@ -41,8 +41,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void deleteBoard(Long boardId) throws Exception {
-		dao.deleteBoard(boardId);		
+	public void deleteBoard(Long boardNo) throws Exception {
+		dao.deleteBoard(boardNo);		
 	}
 	
 

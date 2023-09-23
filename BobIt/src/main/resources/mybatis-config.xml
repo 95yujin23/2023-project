@@ -7,7 +7,6 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias type="me.bobit.myapp.book.Book" alias="Book"/>
 		<typeAlias type="me.bobit.myapp.board.service.BoardVO" alias="BoardVO"/>
 		<typeAlias type="me.bobit.myapp.member.service.MemberVO" alias="MemberVO"/>
 	</typeAliases>

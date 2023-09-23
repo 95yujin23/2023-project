@@ -2,25 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="member">
-<!-- 	<sql id="search">
-		SELECT * FROM BOARD 
-		<where>
-			<if test="search == 1">
-				mem_nick =#{keyword}
-			</if>
-			<if test="search == 2">
-				board_sj LIKE CONCAT(CONCAT('%', #{keyword}), '%')
-			</if>
-			<if test="search == 3">
-				board_cn LIKE CONCAT(CONCAT('%', #{keyword}), '%')
-			</if>
-		</where>
-		ORDER BY board_no
-	</sql> -->
 	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
-		MEMBER ORDER BY MEM_ID
+		TBL_MEMBER ORDER BY MEM_ID
 	</select>
 
 	<select id="selectmemberlist" resultType="MemberVO">
@@ -32,35 +17,35 @@
 		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
 		]]>
 		</if> -->
-				MEMBER
+				TBL_MEMBER
 				ORDER BY MEM_ID		
 	</select>
 
 	<select id="selectmember" resultType="MemberVO">
-		SELECT * FROM MEMBER
+		SELECT * FROM TBL_MEMBER
 		WHERE MEM_NICK = #{memNick}
 	</select>
 	
 	<insert id="insertmember">
-	INSERT INTO MEMBER
+	INSERT INTO TBL_MEMBER
 	(MEM_NICK, MEM_ID, MEM_PWD, MEM_MAIL, MEM_FM, MEM_AGE, MEM_AREA)
 	VALUES (#{memNick}, #{memId}, #{memPwd},  #{memMail}, #{memFm}, #{memAge}, #{memArea})
 	</insert>
 	
 	<update id="updatemember">
-	UPDATE MEMBER SET 
+	UPDATE TBL_MEMBER SET 
 	MEM_PWD=#{memPwd}, MEM_MAIL=#{memMail}, MEM_AREA=#{memArea}
 	WHERE MEM_NICK=#{memNick}
 	</update>
 	
 	<update id="deletemember">
-	UPDATE MEMBER SET
+	UPDATE TBL_MEMBER SET
 	MEM_CHECK='n'
 	WHERE MEM_NICK=#{memNick}
 	</update>
 	
 	<update id="kickmember">
-	UPDATE MEMBER SET
+	UPDATE TBL_MEMBER SET
 	MEM_CHECK='x'
 	WHERE MEM_NICK=#{memNick}
 	</update>

@@ -13,10 +13,10 @@ public interface BoardDao {
 
 	void insertBoard(BoardVO vo);
 
-	BoardVO selectBoard(Long boardId);
+	BoardVO selectBoard(Long boardNo);
 
 	void updateBoard(BoardVO vo);
 
-	void deleteBoard(Long boardId);
+	void deleteBoard(Long boardNo);
 
 }

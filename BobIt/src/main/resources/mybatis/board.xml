@@ -20,7 +20,7 @@
 	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
-		BOARD ORDER BY BOARD_NO
+		TBL_BOARD ORDER BY BOARD_NO
 	</select>
 
 	<select id="selectboardlist" resultType="BoardVO">
@@ -32,30 +32,30 @@
 		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
 		]]>
 		</if> -->
-				BOARD 
+				TBL_BOARD 
 				WHERE BOARD_USE='y'
 				ORDER BY BOARD_NO		
 	</select>
 
 	<select id="selectboard" resultType="BoardVO">
-		SELECT * FROM BOARD
+		SELECT * FROM TBL_BOARD
 		WHERE BOARD_NO = #{boardNo} AND BOARD_USE='y'
 	</select>
 	
 	<insert id="insertboard">
-	INSERT INTO BOARD
+	INSERT INTO TBL_BOARD
 	(MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE)
 	VALUES (#{memNick}, #{boardSj}, #{boardCn},  now())
 	</insert>
 	
 	<update id="updateboard">
-	UPDATE BOARD SET 
+	UPDATE TBL_BOARD SET 
 	BOARD_SJ=#{boardSj}, BOARD_CN=#{boardCn}
 	WHERE BOARD_NO=#{boardNo}
 	</update>
 	
 	<update id="deleteboard">
-	UPDATE BOARD SET
+	UPDATE TBL_BOARD SET
 	BOARD_USE='n'
 	WHERE BOARD_NO=#{boardNo}
 	</update>
