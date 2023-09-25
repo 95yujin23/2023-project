@@ -48,12 +48,5 @@ public class BlameController {
 		return path + "blameList";
 	}
 	
-	@GetMapping("/careBlame/{blameNo}")
-	String careBlame(BlameVO vo) throws Exception {
-		service.careBlame(vo);
-		
-		return path + "blameList";
-
-	}
 }
 

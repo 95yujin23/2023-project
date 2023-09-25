@@ -29,6 +29,15 @@ public class BoardController {
 		return path + "boardList";
 	}
 	
+	@GetMapping("/selectBoard/{boardNo}")
+	String selectBoard(@PathVariable int boardNo, Model model) throws Exception{
+		BoardVO vo = service.selectBoard(boardNo);
+		model.addAttribute("vo", vo);
+		
+		return path + "selectBoard";
+		
+	}
+	
 	@GetMapping("/insertBoard")
 	String insertBoard() {
 		return path + "insertBoard";
@@ -42,7 +51,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/updateBoard/{boardNo}")
-	String updateBoard(@PathVariable Long boardNo, Model model) throws Exception {
+	String updateBoard(@PathVariable int boardNo, Model model) throws Exception {
 		BoardVO vo = service.selectBoard(boardNo);
 		
 		model.addAttribute("vo", vo);
@@ -51,7 +60,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/updateBoard/{boardNo}")
-	String updateBoard(@PathVariable Long boardNo, BoardVO vo) throws Exception {
+	String updateBoard(@PathVariable int boardNo, BoardVO vo) throws Exception {
 		vo.setBoardNo(boardNo);
 		
 		service.updateBoard(vo);
@@ -60,7 +69,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/deleteBoard/{boardNo}")
-	String deleteBoard(@PathVariable Long boardNo) throws Exception {
+	String deleteBoard(@PathVariable int boardNo) throws Exception {
 		service.deleteBoard(boardNo);
 		
 		return "redirect:../boardList";

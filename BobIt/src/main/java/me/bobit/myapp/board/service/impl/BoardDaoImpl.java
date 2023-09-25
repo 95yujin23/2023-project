@@ -26,13 +26,13 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
+	public BoardVO selectBoard(int boardNo) {
+		return sql.selectOne("board.selectboard", boardNo);
+	}
+	
+	@Override
 	public void insertBoard(BoardVO vo) {
 		sql.insert("board.insertboard", vo);
-	}
-
-	@Override
-	public BoardVO selectBoard(Long boardNo) {
-		return sql.selectOne("board.selectboard", boardNo);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public void deleteBoard(Long boardNo) {
+	public void deleteBoard(int boardNo) {
 		sql.update("board.deleteboard", boardNo);
 	}
 

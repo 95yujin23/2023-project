@@ -26,7 +26,7 @@ public class BlameDaoImpl implements BlameDao {
 	}
 
 	@Override
-	public void inserBlame(BlameVO vo) {
+	public void insertBlame(BlameVO vo) {
 		sql.insert("blame.insertblame", vo);
 	}
 
@@ -36,13 +36,36 @@ public class BlameDaoImpl implements BlameDao {
 	}
 
 	@Override
-	public void careBlame(BlameVO vo) {
-		sql.update("blame.careblame", vo);
+	public void deleteBoard(int blameNo) {
+		sql.update("blame.deleteblame", blameNo);
 	}
 
 	@Override
-	public void deleteBoard(int blameNo) {
-		sql.update("blame.deleteblame", blameNo);
+	public void updateBlame(BlameVO vo) {
+		sql.update("blame.updateblame", vo);
+		
+	}
+
+	@Override
+	public void takeBlame(BlameVO vo) {
+		sql.update("blame.takeblame", vo);		
+	}
+
+	@Override
+	public void compleBlame(BlameVO vo) {
+		sql.update("blame.completeblame", vo);
+		
+	}
+	
+	@Override
+	public void deleteBlame(BlameVO vo) {
+		sql.update("blame.deleteblame", vo);
+	}
+
+	@Override
+	public void deniedBlame(BlameVO vo) {
+		sql.update("blame.deniedblame", vo);
+		
 	}
 
 }

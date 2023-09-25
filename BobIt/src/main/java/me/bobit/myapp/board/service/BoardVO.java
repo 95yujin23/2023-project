@@ -3,7 +3,7 @@ package me.bobit.myapp.board.service;
 public class BoardVO {
 	
 	//게시글번호
-	private Long boardNo;
+	private int boardNo;
 	
 	//닉네임
 	private String memNick;
@@ -32,11 +32,11 @@ public class BoardVO {
 	//관리자여부
 	private String mngAt;
 
-	public Long getBoardNo() {
+	public int getBoardNo() {
 		return boardNo;
 	}
 
-	public void setBoardNo(Long boardNo) {
+	public void setBoardNo(int boardNo) {
 		this.boardNo = boardNo;
 	}
 

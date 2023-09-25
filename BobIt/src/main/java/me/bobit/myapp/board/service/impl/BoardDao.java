@@ -11,12 +11,12 @@ public interface BoardDao {
 	
 	List<BoardVO> selectBoardList(Pager pager);
 
-	void insertBoard(BoardVO vo);
+	BoardVO selectBoard(int boardNo);
 
-	BoardVO selectBoard(Long boardNo);
+	void insertBoard(BoardVO vo);
 
 	void updateBoard(BoardVO vo);
 
-	void deleteBoard(Long boardNo);
+	void deleteBoard(int boardNo);
 
 }

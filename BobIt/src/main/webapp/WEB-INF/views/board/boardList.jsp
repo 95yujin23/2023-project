@@ -17,7 +17,6 @@
 			<tr>
 				<th>번호</th>
 				<th>제목</th>
-				<th>내용</th>
 				<th>작성자</th>
 				<th>작성일</th>
 				<th>관리</th>
@@ -25,9 +24,8 @@
 				<tbody>
 					<c:forEach var="vo" items="${list}">
 						<tr>
-							<td>${vo.boardNo}</td>
-							<td>${vo.boardSj}</td>
-							<th>${vo.boardCn}</th>
+							<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardNo}</a></td>
+							<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardSj}</a></td>
 							<td>${vo.memNick}</td>
 							<td>${vo.boardDate}</td>
 							<td><a href="deleteBoard/${vo.boardNo}">삭제</a>

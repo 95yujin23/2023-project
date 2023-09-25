@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="blame">
+
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_BLAME ORDER BY BLAME_NO
+	</select>
+	
+	<select id="selectblamelist" resultType="BlameVO">
+		SELECT * FROM
+				TBL_BLAME 
+				WHERE BLAME_USE='y'
+				ORDER BY BLAME_NO		
+	</select>
+	
+	<select id="selectblame" resultType="BlameVO">
+		SELECT * FROM TBL_BLAME
+		WHERE BLAME_NO = #{blameNo} AND BLAME_USE='y'
+	</select>
+	
+	<insert id="insertblame">
+	INSERT INTO TBL_BLAME
+	(MEM_NICK, BLAME_SJ, BLAME_CN, BLAME_DATE)
+	VALUES (#{memNick}, #{blameSj}, #{blameCn},  now())
+	</insert>
+	
+	<update id="updateblame">
+	UPDATE TBL_BLAME SET 
+	BLAME_SJ=#{blameSj}, BLAMECN=#{blameCn}
+	WHERE BLAME_NO=#{blameNo}
+	</update>
+	
+	<update id="takeblame">
+	UPDATE TBL_BLAME SET
+	BLAME_STTS='t'
+	WHERE BLAME_NO=#{blameNo}
+	</update>
+	
+	<update id="compleblame">
+	UPDATE TBL_BLAME SET
+	BLAME_STTS='c'
+	WHERE BLAME_NO=#{blameNo}
+	</update>
+	
+	<update id="deniedblame">
+	UPDATE TBL_BLAME SET
+	BLAME_STTS='d'
+	WHERE BLAME_NO=#{blameNo}
+	</update>
+	
+	<update id="deleteblame">
+	UPDATE TBL_BOARD SET
+	BOARD_USE='n'
+	WHERE BOARD_NO=#{boardNo}
+	</update>
+
+</mapper>
+	

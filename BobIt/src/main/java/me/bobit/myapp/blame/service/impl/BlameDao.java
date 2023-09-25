@@ -11,12 +11,20 @@ public interface BlameDao {
 
 	List<BlameVO> selectBlameList(Pager pager);
 
-	void inserBlame(BlameVO vo);
+	void insertBlame(BlameVO vo);
 
 	BlameVO selectBlame(int blameNo);
 
-	void careBlame(BlameVO vo);
-
 	void deleteBoard(int blameNo);
+
+	void updateBlame(BlameVO vo);
+
+	void takeBlame(BlameVO vo);
+
+	void compleBlame(BlameVO vo);
+
+	void deleteBlame(BlameVO vo);
+
+	void deniedBlame(BlameVO vo);
 
 }

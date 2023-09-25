@@ -29,7 +29,7 @@ public class BlameServiceImpl implements BlameService {
 
 	@Override
 	public void insertBlame(BlameVO vo) throws Exception {
-		blamedao.inserBlame(vo);
+		blamedao.insertBlame(vo);
 	}
 
 	@Override
@@ -38,13 +38,31 @@ public class BlameServiceImpl implements BlameService {
 	}
 
 	@Override
-	public void careBlame(BlameVO vo) throws Exception {
-		blamedao.careBlame(vo);
+	public void updateBlame(BlameVO vo) throws Exception {
+		blamedao.updateBlame(vo);		
+	}
+	
+	@Override
+	public void takeBlame(BlameVO vo) throws Exception {
+		blamedao.takeBlame(vo);
+		
+	}
+	
+	@Override
+	public void compleBlame(BlameVO vo) throws Exception {
+		blamedao.compleBlame(vo);		
 	}
 
 	@Override
-	public void deleteBlame(int blameNo) throws Exception {
-		blamedao.deleteBoard(blameNo);
+	public void deniedBlame(BlameVO vo) throws Exception {
+		blamedao.deniedBlame(vo);
 	}
+	
+	@Override
+	public void deleteBlame(BlameVO vo) throws Exception {
+		blamedao.deleteBlame(vo);		
+	}
+
+	
 
 }

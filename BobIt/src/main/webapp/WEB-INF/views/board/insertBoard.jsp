@@ -31,7 +31,7 @@
 	
 	<div>
 		<button>등록</button>
-		<a href="../boardList"><button type="button">목록</button></a>
+		<a href="boardList"><button type="button">목록</button></a>
 	</div>
 </div>
 </form>

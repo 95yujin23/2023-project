@@ -24,14 +24,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void insertBoard(BoardVO vo) throws Exception {
-		dao.insertBoard(vo);
-		
-	}
-
-	@Override
-	public BoardVO selectBoard(Long boardNo) throws Exception {
+	public BoardVO selectBoard(int boardNo) throws Exception {
 		return dao.selectBoard(boardNo);
+	}
+	
+	@Override
+	public void insertBoard(BoardVO vo) throws Exception {
+		dao.insertBoard(vo);		
 	}
 
 	@Override
@@ -41,7 +40,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void deleteBoard(Long boardNo) throws Exception {
+	public void deleteBoard(int boardNo) throws Exception {
 		dao.deleteBoard(boardNo);		
 	}
 	
