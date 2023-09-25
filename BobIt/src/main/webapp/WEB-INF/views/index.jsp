@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/css/style.css">
+<link href="${path}/css/style.css">
 
 <script>
 	const msg = "${msg}";
@@ -25,6 +25,7 @@
 			<ul>
 				<li><a href="board/boardList">게시판CRUD</a>
 				<li><a href="member/memberList">맴버관리</a>
+				<li><a href="chat/chatList">채팅</a>
 			</ul>
 		</div>
 	</div>

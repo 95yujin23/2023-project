@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="chat">
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_CHAT ORDER BY CHAT_NO
+	</select>
+	
+	<select id="selectchatlist" resultType="ChatVO">
+		SELECT * FROM TBL_CHAT
+		ORDER BY CHAT_NO
+	</select>
+	
+	<insert id="insertlist">
+		INSERT INTO TBL_CHAT
+		(CHAT_ADMIN, MEM_NICK, CHAT_SJ, CHAT_DATE, CHAT_COMP)
+		VALUES (#{chatAdmin}, #{memNick}, #{chatSj}, NOW(), #{chatComp})
+	</insert>
+	
+	<update id="updatechat">
+		UPDATE TBL_CHAT SET 
+		CHAT_SJ=#{chatSj}
+		WHERE CHAT_NO=#{chatNo}
+	</update>
+	
+	<delete id="deletechat">
+		DELETE FROM TBL_CHAT 
+		WHERE CHAT_NO=#{chatNo}
+	</delete>
+ 
+</mapper>
