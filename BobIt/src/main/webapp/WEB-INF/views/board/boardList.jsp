@@ -10,11 +10,8 @@
 <link href="${path}/css/boardStyle.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script
 	src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="/js/bobit.js"></script>
@@ -23,44 +20,48 @@
 <script
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=72764d4407eae4771ae834fbbe85f476"></script>
 <style>
-a{
-text-decoration: none;
+* {
+	margin: 0 auto;
 }
 
-#TEST{
-  position: fixed; /* 요소를 고정시킴 */
-  right: 0; /* 오른쪽에 붙임 */
+html {
+	width: 100vw;
+    height: 100vh;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	background: #fffffe;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
 }
 
 #boardPage {
   width : 100%;
-  height : 800px;
-  background-color:white;
+  height : auto;
+  background-color: white;
 }
 
 #boardHeader {
-  background-color: black; /* 원하는 배경색을 선택 */
-  height: 25vh; /* 원하는 높이 */
-  width: 105vw;
+  background-color: orange; /* 원하는 배경색을 선택 */
+  height: 20vh; /* 원하는 높이 */
+  width: 100%;
   text-align: center;
 }
 
-#boardNav{
-  background-color:Red;
-  height: 100%;
-  width: 15vw;
-}
-
 #boardArticle{
-  background-color: white;
-  height: 100%;
-  width: 100%;
+  background-color: #FBF8EF;
+  height: 90vh;
+  width: 90%;
 }
 
 #boardFooter{
-  background-color: black;
-  height: 10vw;
-  width: 105vw;
+  background-color: orange;
+  height: 20vw;
+  width: 100%;
 }
 
 #headerTitle{
@@ -94,26 +95,13 @@ text-decoration: none;
 }
 
 #insert {
-  width: 800px;
+  width: 80%;
   height: 800px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 300px; /* 조정할 여백 값을 설정하세요 */
-}
-
-#username{
-  width: 100%; /* 원하는 크기로 조정 */
-  margin: 0 auto; /* 가운데 정렬을 위한 설정 */
-  display: block; /* 가운데 정렬을 위해 블록 요소로 변경 */
-}
-
-#title{
-  width: 400%; /* 원하는 크기로 조정 */
-  margin: 0 auto; /* 가운데 정렬을 위한 설정 */
-  display: block; /* 가운데 정렬을 위해 블록 요소로 변경 */
-	
+  margin-top: 200px; /* 조정할 여백 값을 설정하세요 */
 }
 
 #content{
@@ -123,76 +111,33 @@ text-decoration: none;
   display: block; /* 가운데 정렬을 위해 블록 요소로 변경 */
 }
 
-#WriteBtn{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-  position: relative;
-  left:42vw;
-  top:2vh;
-}
-
-#WriteLink{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-}
 #WriteBtn2{
   text-decoration: none; /* 밑줄 제거 */
   color: black; /* 원하는 색상으로 변경 */
   font-weight: bold; /* 글씨체를 굵게 설정 */
   position: relative;
-  left:47vw;
-  top:55vh;
+  background-color: orange;
+  padding: 15px;
+  left: 50%;
+  top: 10%;
 }
 
 #WriteLink2{
   text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
+  color: white; /* 원하는 색상으로 변경 */
   font-weight: bold; /* 글씨체를 굵게 설정 */
 }
 
-#ListBtn{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-  position: relative;
-  bottom: 3.9vh;
-}
 
-#ListLink{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-}
-#ListBtn2{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-  position: relative;
-  bottom: 5.3vh;
-}
+th, td{
+text-align: center;}  
 
-#ListLink2{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
+  
+td a{
+text-decoration: none;
+color: black;
+text-align: center;
 }
-
-#boardTitleClick{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-}
-
-#DeleteBtn{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-}
-#DeleteDiv{
-  position: relative;
-  left:47vw;
 
 </style>
 </head>
@@ -207,38 +152,42 @@ text-decoration: none;
 				<li id="headerLi"><a href="#" class="headerManuLink">Photo</a></li>
 			</ul>
 		</div>
-	</div>
-	<div id="boardArticle">
-		<div id="insert">
-			<table class="table table-hover" style="text-align: content;">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>관리</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="vo" items="${list}">
+		<div id="boardArticle">
+			<div id="insert">
+				<table class="table table-hover" style="text-align: content;">
+					<thead>
 						<tr>
-							<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardNo}</a></td>
-							<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardSj}</a></td>
-							<td>${vo.memNick}</td>
-							<td>${vo.boardDate}</td>
-							<td><a href="deleteBoard/${vo.boardNo}">삭제</a> <a
-								href="updateBoard/${vo.boardNo}">수정</a></td>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>관리</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-			<div id="WriteBtn2" class="btn btn-outline-dark">
-				<a id="WriteLink2" href="insertBoard">등록</a>
+					</thead>
+					<tbody>
+						<c:forEach var="vo" items="${list}">
+							<tr>
+								<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardNo}</a></td>
+								<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardSj}</a></td>
+								<td>${vo.memNick}</td>
+								<td>${vo.boardDate}</td>
+								<td>
+									<a href="deleteBoard/${vo.boardNo}" class="btn btn-outline-info">삭제</a> 
+									<a href="updateBoard/${vo.boardNo}" class="btn btn-outline-info">수정</a>
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				<div id="WriteBtn2" class="btn btn-outline-dark">
+					<a id="WriteLink2" href="insertBoard">등록</a>
+				</div>
 			</div>
 		</div>
+		<div>
+			<div id="boardFooter"></div>
+		</div>
 	</div>
-	<div>
-		<div id="boardFooter"></div>
+
 </body>
 </html>
