@@ -43,24 +43,24 @@ public class BlameServiceImpl implements BlameService {
 	}
 	
 	@Override
-	public void takeBlame(BlameVO vo) throws Exception {
-		blamedao.takeBlame(vo);
+	public void takeBlame(int blameNo) throws Exception {
+		blamedao.takeBlame(blameNo);
 		
 	}
 	
 	@Override
-	public void compleBlame(BlameVO vo) throws Exception {
-		blamedao.compleBlame(vo);		
+	public void compleBlame(int blameNo) throws Exception {
+		blamedao.compleBlame(blameNo);		
 	}
 
 	@Override
-	public void deniedBlame(BlameVO vo) throws Exception {
-		blamedao.deniedBlame(vo);
+	public void deniedBlame(int blameNo) throws Exception {
+		blamedao.deniedBlame(blameNo);
 	}
 	
 	@Override
-	public void deleteBlame(BlameVO vo) throws Exception {
-		blamedao.deleteBlame(vo);		
+	public void deleteBlame(int blameNo) throws Exception {
+		blamedao.deleteBlame(blameNo);		
 	}
 
 	

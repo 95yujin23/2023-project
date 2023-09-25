@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import me.bobit.myapp.Pager;
 import me.bobit.myapp.blame.service.BlameService;
 import me.bobit.myapp.blame.service.BlameVO;
+import me.bobit.myapp.board.service.BoardVO;
 
 @Controller
 @RequestMapping("/blame")
 public class BlameController {
-	final String path = "/blame";
+	final String path = "blame/";
 	
 	@Autowired
 	BlameService service;
@@ -41,12 +42,58 @@ public class BlameController {
 		return "redirect:blameList";
 	}
 	
-	@GetMapping("takeBlame/{blameNo")
-	String takeBlame(BlameVO vo) throws Exception {
-		service.takeBlame(vo);
+	@GetMapping("/selectBlame/{blameNo}")
+	String selectBlame(@PathVariable int blameNo, Model model) throws Exception{
+		BlameVO vo = service.selectBlame(blameNo);
+		model.addAttribute("vo", vo);
 		
-		return path + "blameList";
+		return path + "/selectBlame";
 	}
 	
+	@GetMapping("/updateBlame/{blameNo}")
+	String updateBlame(@PathVariable int blameNo, Model model) throws Exception {
+		BlameVO vo = service.selectBlame(blameNo);
+		
+		model.addAttribute("vo", vo);
+		
+		return path + "/updateBlame";
+	}
+	
+	@PostMapping("/updateBlame/{blameNo}")
+	String updateBlame(@PathVariable int blameNo, BlameVO vo) throws Exception {
+		vo.setBlameNo(blameNo);
+		
+		service.updateBlame(vo);
+		
+		return "redirect:../blameList";
+	}
+	
+	@GetMapping("/takeBlame/{blameNo}")
+	String takeBlame(@PathVariable int blameNo) throws Exception {
+		service.takeBlame(blameNo);
+		
+		return "redirect:../blameList";
+	}
+	
+	@GetMapping("/compleBlame/{blameNo}")
+	String compleBlame(@PathVariable int blameNo) throws Exception {
+		service.compleBlame(blameNo);
+		
+		return "redirect:../blameList";
+	}
+	
+	@GetMapping("/deniedBlame/{blameNo}")
+	String deniedBlame(@PathVariable int blameNo) throws Exception {
+		service.deniedBlame(blameNo);
+		
+		return "redirect:../blameList";
+	}
+
+	@GetMapping("/deleteBlame/{blameNo}")
+	String deleteBlame(@PathVariable int blameNo) throws Exception {
+		service.deleteBlame(blameNo);
+		
+		return "redirect:../blameList";
+	}
 }
 

@@ -47,24 +47,24 @@ public class BlameDaoImpl implements BlameDao {
 	}
 
 	@Override
-	public void takeBlame(BlameVO vo) {
-		sql.update("blame.takeblame", vo);		
+	public void takeBlame(int blameNo) {
+		sql.update("blame.takeblame", blameNo);		
 	}
 
 	@Override
-	public void compleBlame(BlameVO vo) {
-		sql.update("blame.completeblame", vo);
+	public void compleBlame(int blameNo) {
+		sql.update("blame.compleblame", blameNo);
 		
 	}
 	
 	@Override
-	public void deleteBlame(BlameVO vo) {
-		sql.update("blame.deleteblame", vo);
+	public void deleteBlame(int blameNo) {
+		sql.update("blame.deleteblame", blameNo);
 	}
 
 	@Override
-	public void deniedBlame(BlameVO vo) {
-		sql.update("blame.deniedblame", vo);
+	public void deniedBlame(int blameNo) {
+		sql.update("blame.deniedblame", blameNo);
 		
 	}
 

@@ -19,12 +19,12 @@ public interface BlameDao {
 
 	void updateBlame(BlameVO vo);
 
-	void takeBlame(BlameVO vo);
+	void takeBlame(int blameNo);
 
-	void compleBlame(BlameVO vo);
+	void compleBlame(int blameNo);
 
-	void deleteBlame(BlameVO vo);
+	void deleteBlame(int blameNo);
 
-	void deniedBlame(BlameVO vo);
+	void deniedBlame(int blameNo);
 
 }

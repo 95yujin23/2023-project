@@ -19,15 +19,15 @@ public interface BlameService {
 	void updateBlame(BlameVO vo) throws Exception;
 	
 	//신고글 접수->진행으로 바꾸기(관리자 전용기능)
-	void takeBlame(BlameVO vo) throws Exception;
+	void takeBlame(int blameNo) throws Exception;
 
 	//신고글 진행->완료하기(관리자 전용기능)
-	void compleBlame(BlameVO vo)throws Exception;
+	void compleBlame(int blameNo)throws Exception;
 	
 	//신고글 진행->기각하기(관리자 전용기능)
-	void deniedBlame(BlameVO vo)throws Exception;
+	void deniedBlame(int blameNo)throws Exception;
 	
 	//신고글 처리하기(신고글 작성자 or 관리자가 필요할때 삭제 가능)
-	void deleteBlame(BlameVO vo) throws Exception;
+	void deleteBlame(int blameNo) throws Exception;
 
 }

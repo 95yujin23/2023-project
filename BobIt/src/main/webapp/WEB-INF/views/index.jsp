@@ -24,6 +24,7 @@
 			<ul>
 				<li><a href="board/boardList">게시판CRUD</a>
 				<li><a href="member/memberList">맴버관리</a>
+				<li><a href="blame/blameList">신고게시판</a>
 			</ul>
 		</div>
 	</div>
