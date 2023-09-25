@@ -145,12 +145,6 @@ text-align: center;
 	<div id="boardPage">
 		<div id="boardHeader">
 			<h3 id="headerTitle">테스트용 게시판</h3>
-			<ul id=headerUl>
-				<li id="headerLi"><a href="#" class="headerManuLink">Write</a></li>
-				<li id="headerLi"><a href="#" class="headerManuLink">List</a></li>
-				<li id="headerLi"><a href="#" class="headerManuLink">Info</a></li>
-				<li id="headerLi"><a href="#" class="headerManuLink">Photo</a></li>
-			</ul>
 		</div>
 		<div id="boardArticle">
 			<div id="insert">
