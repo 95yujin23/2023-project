@@ -22,5 +22,8 @@ public class RootController {
 		return "home";
 	}
 	
-
+	@GetMapping("/temp")
+	String temp() {
+		return "index";
+	}
 }

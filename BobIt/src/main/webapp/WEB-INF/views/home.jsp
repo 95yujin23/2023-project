@@ -38,12 +38,19 @@ body {
   font-size: 1.6rem;
   background: #fffffe;
   font-family: "Luckiest Guy", cursive;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
 }
 
 img {
   width: 100%;
 }
 
+a{
+	text-decoration: none;
+}
 header {
   position: fixed;
   left: 0;
@@ -65,6 +72,9 @@ header {
   width: 100%;
   color: #ffbf77;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.logo a{
+color: #ffbf77;
 }
 
 .menu {
@@ -153,9 +163,9 @@ footer {
 </head>
 <body translate="no">
   <header>
-  <h1 class="logo">BOBIT</h1>
+  <h1 class="logo"><a href="/temp">BOBIT</a></h1>
   <button class="menu">
-    <span></span>
+    <span><a href="/temp"></a></span>
   </button>
 </header>
 <main id="wrapper">
