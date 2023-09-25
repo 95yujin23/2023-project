@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cdetail">
+<!-- 	<sql id="search">
+		SELECT * FROM BOARD 
+		<where>
+			<if test="search == 1">
+				mem_nick =#{keyword}
+			</if>
+			<if test="search == 2">
+				board_sj LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+			<if test="search == 3">
+				board_cn LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+		</where>
+		ORDER BY board_no
+	</sql> -->
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_CDETAIL ORDER BY CDETAIL_NO
+	</select>
+
+	<select id="selectcdetaillist" resultType="CdetailVO">
+		SELECT * FROM
+			<!-- (SELECT sub.*, ROWNUM rnum FROM
+ 				(<include refid="search"></include>) sub)				
+ 		<if test="perPage != 0">
+ 		<![CDATA[ 
+		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
+		]]>
+		</if> -->
+				TBL_CDETAIL 
+				ORDER BY CDETAIL_NO		
+	</select>
+
+	<select id="selectcdetail" resultType="CdetailVO">
+		SELECT * FROM TBL_CDETAIL
+		WHERE CDETAIL_NO = #{cdetailNo} 
+	</select>
+	
+	<insert id="insertcdetail">
+	INSERT INTO TBL_CDETAIL
+	(MEM_NICK, CDETAIL_CN, CDETAIL_DATE)
+	VALUES (#{memNick}, #{cdetailCn}, now())
+	</insert>
+	
+	<update id="updatecdetail">
+	UPDATE TBL_CDETAIL SET 
+	CDETAIL_CN=#{cdetailCn}
+	WHERE CDETAIL_NO=#{cdetailNo}
+	</update>
+	
+	<delete id="deletecdetail">
+	DELETE FROM TBL_CDETAIL 
+	WHERE CDETAIL_NO=#{cdetailNo}
+	</delete>
+	
+</mapper>

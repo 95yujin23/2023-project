@@ -10,12 +10,16 @@
 		<typeAlias type="me.bobit.myapp.board.service.BoardVO" alias="BoardVO"/>
 		<typeAlias type="me.bobit.myapp.member.service.MemberVO" alias="MemberVO"/>
 		<typeAlias type="me.bobit.myapp.blame.service.BlameVO" alias="BlameVO"/>
+		<typeAlias type="me.bobit.myapp.chat.service.ChatVO" alias="ChatVO"/>
+		<typeAlias type="me.bobit.myapp.cdetail.service.CdetailVO" alias="CdetailVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/board.xml"/>
 		<mapper resource="mybatis/member.xml"/>
 		<mapper resource="mybatis/blame.xml"/>
+		<mapper resource="mybatis/chat.xml"/>
+		<mapper resource="mybatis/cdetail.xml"/>
 		
 	</mappers>
 </configuration>
