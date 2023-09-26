@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="meet">
+<!-- 	<sql id="search">
+		SELECT * FROM BOARD 
+		<where>
+			<if test="search == 1">
+				mem_nick =#{keyword}
+			</if>
+			<if test="search == 2">
+				board_sj LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+			<if test="search == 3">
+				board_cn LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+		</where>
+		ORDER BY board_no
+	</sql> -->
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_MEET ORDER BY MEET_NO
+	</select>
+
+	<select id="selectmeetlist" resultType="MeetVO">
+		SELECT * FROM
+			<!-- (SELECT sub.*, ROWNUM rnum FROM
+ 				(<include refid="search"></include>) sub)				
+ 		<if test="perPage != 0">
+ 		<![CDATA[ 
+		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
+		]]>
+		</if> -->
+				TBL_MEET 
+				ORDER BY MEET_NO		
+	</select>
+
+	<select id="selectmeet" resultType="MeetVO">
+		SELECT * FROM TBL_MEET
+		WHERE MEET_NO = #{meetNo}
+	</select>
+	
+	<insert id="insertmeet">
+	INSERT INTO TBL_MEET
+	(MEET_SJ, MEM_NICK, MEET_TIME, MEET_AREA, MEET_MENU, MEET_FM, MEET_AGE, MEET_MAX, MEET_CN)
+	VALUES (#{meetSj}, #{memNick}, now(), #{meetArea}, #{meetMenu}, #{meetFm}, #{meetAge}, #{meetMax}, #{meetCn})
+	</insert>
+	
+	<update id="updatemeet">
+	UPDATE TBL_MEET SET 
+	MEET_SJ=#{meetSj}, MEET_CN=#{meetCn}, MEET_AREA=#{meetArea}, MEET_MENU=#{meetMenu}, MEET_FM=#{meetFm}, MEET_AGE=#{meetAge}, MEET_MAX=#{meetMax})
+	WHERE MEET_NO=#{meetNo}
+	</update>
+	
+	<update id="deletemeet">
+	UPDATE TBL_MEET SET
+	MEET_STTS='n'
+	WHERE MEET_NO=#{meetNo}
+	</update>
+	
+</mapper>

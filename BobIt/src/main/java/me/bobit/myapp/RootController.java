@@ -26,4 +26,14 @@ public class RootController {
 	String temp() {
 		return "index";
 	}
+	
+	@GetMapping("/kamp")
+	String map() {
+		return "kamp";
+	}
+	
+	@GetMapping("/sungsim")
+	String sungsim() {
+		return "sungsim";
+	}
 }

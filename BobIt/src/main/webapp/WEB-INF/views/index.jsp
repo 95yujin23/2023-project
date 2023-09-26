@@ -27,8 +27,13 @@
 				<li><a href="blame/blameList">신고게시판</a>
 				<li><a href="chat/chatList">채팅</a>
 				<li><a href="cdetail/cdetailList">채팅상세</a>
+				<li><a href="meet/meetList">모임</a>
+				<li><a href="kamp">맵</a>
+				<li><a href="sungsim">성심당 본점 지도</a>
 			</ul>
 		</div>
+
 	</div>
+	
 </body>
 </html>
