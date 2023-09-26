@@ -31,10 +31,9 @@
 }
 
 html {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	font-size: 62.5%;
-	margin: auto;
 }
 
 body {
@@ -43,44 +42,135 @@ body {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none;
+	user-select: none
 }
 
 #boardPage {
 	width: 100%;
 	height: auto;
+	background-color: white;
 }
 
-#reportpage-board {
+#boardHeader {
+	background-color: orange; /* 원하는 배경색을 선택 */
+	height: 15vh; /* 원하는 높이 */
 	width: 100%;
-	height: 200px;
-	margin: auto;
+	text-align: center;
 }
 
-#aside {
+#boardArticle {
+	background-color: #FBF8EF;
+	height: 80vh;
 	width: 100%;
-	height: 150px;
 }
 
-#inmenu {
+#boardFooter {
 	background-color: orange;
-	height: 15vh;
+	height: 17vw;
+	width: 100%;
 }
 
 #headerTitle {
 	position: relative;
 	top: 5vh;
 	font-weight: bold;
-	font-size: 30pt;
+	font-size: 30px;
 	color: white;
+}
+
+#headerUl {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	color: white;
+	position: relative;
+	top: 10vh;
+}
+
+#headerLi {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	flex: 1; /* 아이템의 공간을 균등하게 분배 */
+}
+
+.headerManuLink {
+	color: white; /* 링크 텍스트 색상 설정 */
+	text-decoration: none; /* 밑줄 제거 */
+}
+
+#insert {
+	width: 100%;
+	height: 1000px;
+}
+
+#WriteBtn2 {
+	text-decoration: none; /* 밑줄 제거 */
+	color: black; /* 원하는 색상으로 변경 */
+	font-weight: bold; /* 글씨체를 굵게 설정 */
+	position: relative;
+	background-color: orange;
+	padding: 15px;
+	left: 50%;
+	top: 10%;
+}
+
+#WriteLink2 {
+	text-decoration: none; /* 밑줄 제거 */
+	color: white; /* 원하는 색상으로 변경 */
+	font-weight: bold; /* 글씨체를 굵게 설정 */
+}
+
+th, td {
 	text-align: center;
 }
 
-#reportarticle {
-	width: 100%;
-	margin: 0 auto;
-	margin-top: 20px;
+td a {
+	text-decoration: none;
+	color: black;
 	text-align: center;
+}
+
+#m1first {
+	width: 120px;
+	height: 100px;
+	border: 2px dotted orange;
+	border-bottom: none;
+	padding-bottom: 10px;
+	padding-left: 0;
+	list-style: none;
+	text-align: center;
+}
+
+#m1first:nth-child(3) {
+	border-bottom: 2px dotted orange;
+}
+
+.in-l {
+	float: left;
+	width: 12%;
+	height: 800px;
+	text-align: center;
+	background-color: orange;
+}
+
+.in-r {
+	float: left;
+	width: 88%;
+	margin: 25px 0 1px 0;
+	height: 800px;
+}
+
+#m-link {
+	text-decoration: none;
+	line-height: 2rem;
+	color: black;
+	padding: 10px;
+}
+
+#menu {
+	margin-top: 20px;
 }
 
 .col1 {
@@ -96,7 +186,7 @@ body {
 }
 
 .col2 {
-	width: 70vw;
+	width: 800px;
 	text-align: left;
 	padding: 15px 0;
 	font-size: 1em;
@@ -116,47 +206,56 @@ body {
 
 .submitBt {
 	margin-top: 30px;
-	margin-left: 20px;
-	position: absolute;
+	margin-left: 70px;
+	/* position: absolute;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 }
 </style>
 </head>
 <body>
 	<div id="boardPage">
-		<div id="reportpage-board">
-			<div id="aside">
-				<div id="inmenu">
-					<h3 id="headerTitle">게시글 작성</h3>
-				</div>
-			</div>
-			<div id="reportarticle">
-				<form method="post">
+		<div id="boardHeader">
+			<h3 id="headerTitle">게시판 작성</h3>
+		</div>
+		<div id="boardArticle">
+			<div id="insert">
+				<nav class="in-l">
+					<ul id="menu">
+						<li id="m1first"><a href="/" id="m-link">공지사항</a></li>
+						<li id="m1first"><a href="/" id="m-link">매칭 게시판</a></li>
+						<li id="m1first"><a href="/" id="m-link">신고 게시판</a></li>
+					</ul>
+				</nav>
+				<div class="in-r" style="text-align: center;">
 					<div>
-
-						<div>
-							<label class="col1">제목 : </label> <input type="text"
-								name="boardSj" class="col2">
-						</div>
-
-						<div>
-							<label class="col1">작성자 : </label> <input type="text"
-								name="memNick" class="col2">
-						</div>
-
-						<div>
-							<label class="col1">내용 : </label> <input type="text"
-								name="boardCn" class="col2">
-						</div>
-
-						<div class="submitBt">
-							<button class="col3">등록</button>
-							<a href="boardList"><button type="button" class="col3">목록</button></a>
-						</div>
+						<label class="col1">제목 : </label> <input type="text"
+							name="boardSj" class="col2">
 					</div>
-				</form>
+
+
+
+					<div>
+						<label class="col1">작성자 : </label> <input type="text"
+							name="memNick" class="col2">
+					</div>
+
+					<div>
+						<label class="col1">내용 : </label> <input type="text"
+							name="boardCn" class="col2">
+					</div>
+					<div class="submitBt">
+						<button class="col3">등록</button>
+						<a href="boardList"><button type="button" class="col3">목록</button></a>
+					</div>
+				</div>
+
 			</div>
 		</div>
+	</div>
+	<div>
+		<div id="boardFooter"></div>
+	</div>
+
 </body>
 </html>

@@ -10,8 +10,11 @@
 <link href="${path}/css/boardStyle.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script
 	src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="/js/bobit.js"></script>
@@ -25,8 +28,8 @@
 }
 
 html {
-	width: 100vw;
-    height: 100vh;
+	width: 100%;
+	height: 100%;
 	font-size: 62.5%;
 }
 
@@ -40,105 +43,130 @@ body {
 }
 
 #boardPage {
-  width : 100%;
-  height : auto;
-  background-color: white;
+	width: 100%;
+	height: auto;
+	background-color: white;
 }
 
 #boardHeader {
-  background-color: orange; /* 원하는 배경색을 선택 */
-  height: 20vh; /* 원하는 높이 */
-  width: 100%;
-  text-align: center;
+	background-color: orange; /* 원하는 배경색을 선택 */
+	height: 15vh; /* 원하는 높이 */
+	width: 100%;
+	text-align: center;
 }
 
-#boardArticle{
-  background-color: #FBF8EF;
-  height: 90vh;
-  width: 90%;
+#boardArticle {
+	background-color: #FBF8EF;
+	height: 90vh;
+	width: 100%;
 }
 
-#boardFooter{
-  background-color: orange;
-  height: 20vw;
-  width: 100%;
+#boardFooter {
+	background-color: orange;
+	height: 10vw;
+	width: 100%;
 }
 
-#headerTitle{
-  position: relative;
-  top: 5vh;
-  font-weight: bold;
-  font-size: 30px;
-  color: white;
+#headerTitle {
+	position: relative;
+	top: 5vh;
+	font-weight: bold;
+	font-size: 30px;
+	color: white;
 }
 
-#headerUl{
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  color: white;
-  position: relative;
-  top: 10vh;
+#headerUl {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	color: white;
+	position: relative;
+	top: 10vh;
 }
 
-#headerLi{
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  flex: 1; /* 아이템의 공간을 균등하게 분배 */
+#headerLi {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	flex: 1; /* 아이템의 공간을 균등하게 분배 */
 }
 
-.headerManuLink{
-  color: white; /* 링크 텍스트 색상 설정 */
-  text-decoration: none; /* 밑줄 제거 */
+.headerManuLink {
+	color: white; /* 링크 텍스트 색상 설정 */
+	text-decoration: none; /* 밑줄 제거 */
 }
 
 #insert {
-  width: 80%;
-  height: 800px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 200px; /* 조정할 여백 값을 설정하세요 */
+	width: 100%;
+	height: 1000px;
+	
 }
 
-#content{
-  width: 400%; /* 원하는 크기로 조정 */
-  height:500px;
-  margin: 0 auto; /* 가운데 정렬을 위한 설정 */
-  display: block; /* 가운데 정렬을 위해 블록 요소로 변경 */
+#WriteBtn2 {
+	text-decoration: none; /* 밑줄 제거 */
+	color: black; /* 원하는 색상으로 변경 */
+	font-weight: bold; /* 글씨체를 굵게 설정 */
+	position: relative;
+	background-color: orange;
+	padding: 15px;
+	left: 50%;
+	top: 10%;
 }
 
-#WriteBtn2{
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
-  position: relative;
-  background-color: orange;
-  padding: 15px;
-  left: 50%;
-  top: 10%;
+#WriteLink2 {
+	text-decoration: none; /* 밑줄 제거 */
+	color: white; /* 원하는 색상으로 변경 */
+	font-weight: bold; /* 글씨체를 굵게 설정 */
 }
 
-#WriteLink2{
-  text-decoration: none; /* 밑줄 제거 */
-  color: white; /* 원하는 색상으로 변경 */
-  font-weight: bold; /* 글씨체를 굵게 설정 */
+th, td {
+	text-align: center;
 }
 
-
-th, td{
-text-align: center;}  
-
-  
-td a{
-text-decoration: none;
-color: black;
-text-align: center;
+td a {
+	text-decoration: none;
+	color: black;
+	text-align: center;
 }
 
+#m1first {
+	width: 120px;
+	height: 80px;
+	border: 2px dotted orange;
+	border-bottom: none;
+	padding-bottom: 10px;
+	padding-left: 0;
+	list-style: none;
+	text-align: center;
+}
+#m1first:nth-child(3){
+	border-bottom: 2px dotted orange;
+}
+.in-l {
+	float: left;
+	width: 12%;
+	height: 100%;
+	text-align: center;
+	background-color: orange;
+}
+
+.in-r {
+	float: left;
+	width: 88%;
+	margin: 25px 0 1px 0;
+}
+
+#m-link {
+	text-decoration: none;
+	line-height: 2rem;
+	color: black;
+	padding: 10px;
+}
+
+#menu{
+margin-top: 20px;
+}
 </style>
 </head>
 <body>
@@ -148,7 +176,14 @@ text-align: center;
 		</div>
 		<div id="boardArticle">
 			<div id="insert">
-				<table class="table table-hover" style="text-align: content;">
+				<nav class="in-l">
+					<ul id="menu">
+						<li id="m1first"><a href="/" id="m-link">공지사항</a></li>
+						<li id="m1first"><a href="/" id="m-link">매칭 게시판</a></li>
+						<li id="m1first"><a href="/" id="m-link">신고 게시판</a></li>
+					</ul>
+				</nav>
+				<table class="table table-hover in-r" style="text-align: center;">
 					<thead>
 						<tr>
 							<th>번호</th>
@@ -165,9 +200,9 @@ text-align: center;
 								<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardSj}</a></td>
 								<td>${vo.memNick}</td>
 								<td>${vo.boardDate}</td>
-								<td>
-									<a href="deleteBoard/${vo.boardNo}" class="btn btn-outline-info">삭제</a> 
-									<a href="updateBoard/${vo.boardNo}" class="btn btn-outline-info">수정</a>
+								<td><a href="deleteBoard/${vo.boardNo}"
+									class="btn btn-outline-info">삭제</a> <a
+									href="updateBoard/${vo.boardNo}" class="btn btn-outline-info">수정</a>
 								</td>
 							</tr>
 						</c:forEach>
