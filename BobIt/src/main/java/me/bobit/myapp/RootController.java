@@ -36,4 +36,5 @@ public class RootController {
 	String sungsim() {
 		return "sungsim";
 	}
+
 }
