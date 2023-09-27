@@ -43,8 +43,8 @@
 	
 	<insert id="insertmeet">
 	INSERT INTO TBL_MEET
-	(MEET_SJ, MEM_NICK, MEET_TIME, MEET_AREA, MEET_MENU, MEET_FM, MEET_AGE, MEET_MAX, MEET_CN)
-	VALUES (#{meetSj}, #{memNick}, now(), #{meetArea}, #{meetMenu}, #{meetFm}, #{meetAge}, #{meetMax}, #{meetCn})
+	(MEET_SJ, MEM_NICK, MEET_TIME, MEET_AREA, MEET_MENU, MEET_FM, MEET_AGE, MEET_MAX, MEET_CN, MEET_MAPX, MEET_MAPY)
+	VALUES (#{meetSj}, #{memNick}, now(), #{meetArea}, #{meetMenu}, #{meetFm}, #{meetAge}, #{meetMax}, #{meetCn}, #{meetMapx}, #{meetMapy})
 	</insert>
 	
 	<update id="updatemeet">

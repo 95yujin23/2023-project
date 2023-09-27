@@ -7,28 +7,46 @@
 </head>
 <body>
     <p style="margin-top:-12px">
-        <em class="link">
-            <a href="javascript:void(0);" onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
-                혹시 주소 결과가 잘못 나오는 경우에는 여기에 제보해주세요.
-            </a>
-        </em>
+       
     </p>
-    <div>
+    
+    <div id="map" style="width:800;height:600px;"></div>
+
+	<div>
         주소 입력: <input id="addressInput" type="text">
         <button id="searchButton">검색</button>
     </div>
-    <div id="map" style="width:100%;height:350px;"></div>
-
+    <div>
+        <p>마커 위치 (위도): <span id="latitude"></span></p>
+        <p>마커 위치 (경도): <span id="longitude"></span></p>
+    </div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9c6d709ff2a5098858d1434b8ce6cec6&libraries=services"></script>
     <script>
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-            mapOption = {
-                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                level: 3 // 지도의 확대 레벨
-            };  
+        var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
+        var mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };  
 
         // 지도를 생성합니다    
         var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            draggable: true // 마커를 드래그 가능하게 설정
+        });
+
+        // 마커 드래그 이벤트 리스너 추가
+        kakao.maps.event.addListener(marker, 'dragend', function () {
+            var newPosition = marker.getPosition();
+            var latitude = newPosition.getLat();
+            var longitude = newPosition.getLng();
+
+            // 마커 위치의 위도와 경도 값을 업데이트
+            document.getElementById("latitude").textContent = latitude.toFixed(6);
+            document.getElementById("longitude").textContent = longitude.toFixed(6);
+        });
 
         // 주소 검색 함수
         function searchAddress() {
@@ -45,11 +63,8 @@
 
                     var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-                    // 결과값으로 받은 위치를 마커로 표시합니다
-                    var marker = new kakao.maps.Marker({
-                        map: map,
-                        position: coords
-                    });
+                    // 마커를 해당 위치로 이동합니다
+                    marker.setPosition(coords);
 
                     // 인포윈도우로 장소에 대한 설명을 표시합니다
                     var infowindow = new kakao.maps.InfoWindow({

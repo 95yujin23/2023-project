@@ -37,4 +37,8 @@ public class RootController {
 		return "sungsim";
 	}
 
+	@GetMapping("/mapmarker")
+	String mapmarker() {
+		return "mapmarker";
+	}
 }

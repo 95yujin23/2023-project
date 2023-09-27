@@ -9,13 +9,9 @@
 <body>
     <div id="map" style="width:800px;height:600px;"></div>
     <div>
-        주소로 검색: <input id="addressInput" type="text">
-        <button id="searchButton">검색</button>
-    </div>
-    <div>
         X값 : <input id="Xvalue" type="text">
         Y값 : <input id="Yvalue" type="text"> 
-        <button id="updateButton">Update</button>
+        <button id="updateButton">Update</button> <!-- 추가: 값을 변경하는 버튼 -->
     </div>
     <div>
         <p>현재 X값 : <span id="currentX"></span></p>
@@ -58,6 +54,7 @@
             var newCenter = new kakao.maps.LatLng(element1, element2);
             map.setCenter(newCenter);
 
+            // 18번과 19번 행에서 위치값을 표시
             document.getElementById("currentX").textContent = element1.toFixed(4);
             document.getElementById("currentY").textContent = element2.toFixed(4);
         });
@@ -68,34 +65,11 @@
             document.getElementById("Xvalue").value = newPosition.getLat().toFixed(4);
             document.getElementById("Yvalue").value = newPosition.getLng().toFixed(4);
 
+            // 드래그 이벤트가 발생할 때 위치값을 업데이트
             document.getElementById("currentX").textContent = newPosition.getLat().toFixed(4);
             document.getElementById("currentY").textContent = newPosition.getLng().toFixed(4);
         });
-
-        // 주소 검색 기능 추가
-        document.getElementById("searchButton").addEventListener("click", function() {
-            var address = document.getElementById("addressInput").value;
-            
-            // 주소로 좌표를 검색합니다
-            var geocoder = new kakao.maps.services.Geocoder();
-            geocoder.addressSearch(address, function(result, status) {
-                if (status === kakao.maps.services.Status.OK) {
-                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-                    
-                    marker.setPosition(coords);
-                    map.setCenter(coords);
-
-                    document.getElementById("Xvalue").value = coords.getLat().toFixed(4);
-                    document.getElementById("Yvalue").value = coords.getLng().toFixed(4);
-
-                    document.getElementById("currentX").textContent = coords.getLat().toFixed(4);
-                    document.getElementById("currentY").textContent = coords.getLng().toFixed(4);
-                } else {
-                    alert('주소 검색 실패');
-                }
-            });
-        });
-
+        
         // 페이지 로드 시 초기 지도 표시
         marker.setMap(map);
         marker.setDraggable(true); 

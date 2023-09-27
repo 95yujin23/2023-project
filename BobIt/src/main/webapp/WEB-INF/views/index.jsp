@@ -28,8 +28,9 @@
 				<li><a href="chat/chatList">채팅</a>
 				<li><a href="cdetail/cdetailList">채팅상세</a>
 				<li><a href="meet/meetList">모임</a>
-				<li><a href="kamp">맵</a>
+				<li><a href="kamp">지도 검색</a>
 				<li><a href="sungsim">성심당 본점 지도</a>
+				<li><a href="mapmarker">(테스트중)지도 마커관련 종합</a>
 			</ul>
 		</div>
 

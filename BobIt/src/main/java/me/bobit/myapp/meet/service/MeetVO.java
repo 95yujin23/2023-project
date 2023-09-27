@@ -27,7 +27,24 @@ public class MeetVO {
 	private int meetMax;
 	//모임상태 (기본값 : w(waiting), 꽉참 : f(full), 완료 : c(complete), 실패or취소 : x);
 	private String meetStts;
+	//지도X값
+	private float meetMapx;
+	//지도Y값
+	private float meetMapy;
 	
+	
+	public float getMeetMapx() {
+		return meetMapx;
+	}
+	public void setMeetMapx(float meetMapx) {
+		this.meetMapx = meetMapx;
+	}
+	public float getMeetMapy() {
+		return meetMapy;
+	}
+	public void setMeetMapy(float meetMapy) {
+		this.meetMapy = meetMapy;
+	}
 	public int getMeetApplyno() {
 		return meetApplyno;
 	}
