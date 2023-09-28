@@ -13,7 +13,8 @@
 		<typeAlias type="me.bobit.myapp.chat.service.ChatVO" alias="ChatVO"/>
 		<typeAlias type="me.bobit.myapp.cdetail.service.CdetailVO" alias="CdetailVO"/>
 		<typeAlias type="me.bobit.myapp.meet.service.MeetVO" alias="MeetVO"/>
-	</typeAliases>
+<!--  		<typeAlias type="me.bobit.myapp.mtapply.service.MtapplyVO" alias="MtapplyVO"/>
+ -->	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/board.xml"/>
@@ -22,6 +23,7 @@
 		<mapper resource="mybatis/chat.xml"/>
 		<mapper resource="mybatis/cdetail.xml"/>
 		<mapper resource="mybatis/meet.xml"/>
-
+<!--  		<mapper resource="mybatis/mtapply.xml"/>
+ -->
 	</mappers>
 </configuration>
