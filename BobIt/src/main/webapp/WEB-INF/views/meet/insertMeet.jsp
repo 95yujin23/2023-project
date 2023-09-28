@@ -7,11 +7,11 @@
 <title>모임글 작성</title>
 </head>
 <body>
-	<div class="container">
-	<div>
-		<h2>모임글 작성</h2>
-	</div>
-	<div id="map" style="width:400;height:300px;"></div>
+    <div class="container">
+    <div>
+        <h2>모임글 작성</h2>
+    </div>
+    <div id="map" style="width:400;height:300px;"></div>
 
     <div>
         주소 입력: <input id="addressInput" type="text">
@@ -21,50 +21,50 @@
         <p>마커 위치 (위도): <span id="latitude"></span></p>
         <p>마커 위치 (경도): <span id="longitude"></span></p>
     </div>
-	
-	<form method="post">
-	
-	<div>
-		<label>모임명 : </label>
-		<input type="text" name="meetSj">
-	</div>
-	
-	<div>
-		<label>작성자 : </label>
-		<input type="text" name="memNick">
-	</div>
-	
-	<div>
-		<label>모임내용 : </label>
-		<input type="text" name="meetCn">
-	</div>
-	
-	<div>
-		<label>지역 : </label>
-		<input type="text" name="meetArea">
-	</div>
-	
-	<div>
-		<label>메뉴 : </label>
-		<input type="text" name="meetMenu">
-	</div>
-	
-	<div>
-		<label>성별 : </label>
-		<input type="text" name="meetFm">
-	</div>
-	
-	<div>
-		<label>연령 : </label>
-		<input type="text" name="meetAge">
-	</div>
-	
-	<div>
-		<label>모집인원 : </label>
-		<input type="text" name="meetMax">
-	</div>
-	
-	 <div>
+    
+    <form method="post">
+    
+    <div>
+        <label>모임명 : </label>
+        <input type="text" name="meetSj">
+    </div>
+    
+    <div>
+        <label>작성자 : </label>
+        <input type="text" name="memNick">
+    </div>
+    
+    <div>
+        <label>모임내용 : </label>
+        <input type="text" name="meetCn">
+    </div>
+    
+    <div>
+        <label>지역 : </label>
+        <input type="text" name="meetArea" id="meetArea">
+    </div>
+    
+    <div>
+        <label>메뉴 : </label>
+        <input type="text" name="meetMenu">
+    </div>
+    
+    <div>
+        <label>성별 : </label>
+        <input type="text" name="meetFm">
+    </div>
+    
+    <div>
+        <label>연령 : </label>
+        <input type="text" name="meetAge">
+    </div>
+    
+    <div>
+        <label>모집인원 : </label>
+        <input type="text" name="meetMax">
+    </div>
+    
+     <div>
             <label>모임장소위도 : </label>
             <input type="text" name="meetMapx" id="meetMapx">
         </div>
@@ -107,6 +107,17 @@
             document.getElementById("latitude").textContent = latitude.toFixed(4);
             document.getElementById("longitude").textContent = longitude.toFixed(4);
 
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new kakao.maps.services.Geocoder();
+
+            // 좌표로 주소를 검색합니다
+            geocoder.coord2Address(longitude, latitude, function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    var address = result[0].address.address_name;
+                    document.getElementById("meetArea").value = address;
+                }
+            });
+
             // 모임 정보를 입력하는 부분의 meetMapx와 meetMapy 필드에 위도와 경도 값을 넣습니다
             document.getElementById("meetMapx").value = latitude.toFixed(4);
             document.getElementById("meetMapy").value = longitude.toFixed(4);
@@ -138,6 +149,9 @@
 
                     // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                     map.setCenter(coords);
+                    
+                    // 검색된 주소를 모임 지역 필드에 자동으로 입력
+                    document.getElementById("meetArea").value = result[0].address.address_name;
                 } else {
                     alert('주소 검색 실패');
                 }

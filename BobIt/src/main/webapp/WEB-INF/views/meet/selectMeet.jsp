@@ -55,10 +55,9 @@
 					<dt>내용</dt>
 					<dd><c:out value="${vo.meetCn}" escapeXml="false"/></dd>
 				</dl>
-				
-			</div>
-			
-			<div id="map" style="width: 400px; height: 300px;"></div>
+				 <a href="https://map.kakao.com/?q=${vo.meetMapx},${vo.meetMapy}" target="_blank">지도로 보기</a>
+			</div>			
+
 			
 			
 		</div>
@@ -78,23 +77,7 @@
 			</div>
 		</div>		
 	</div>	
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9c6d709ff2a5098858d1434b8ce6cec6&libraries=services"></script>
-    <script>
-        // 장소의 경도와 위도 값을 가져옵니다.
-        var meetMapx = ${vo.meetMapx}; // 이 값은 서버에서 가져와야 합니다.
-        var meetMapy = ${vo.meetMapy}; // 이 값은 서버에서 가져와야 합니다.
-
-        var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
-        var mapOption = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
-        };  
-        var map = new kakao.maps.Map(container, options);
-    });
-    
-
-    
-</script>
+ 
 
 </body>
 </html>
