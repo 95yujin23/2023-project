@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* nav */
+.default-sidebar>.side-navbar {
+    transition: all 0.2s ease;
+}
+
+.default-sidebar>.side-navbar a[aria-expanded="true"] span {
+    color: #ffffff;
+}
+
+.default-sidebar>.side-navbar ul ul a[aria-expanded="true"] {
+    margin: 0;
+    color: #ffffff;
+}
+
+.default-sidebar>.side-navbar ul ul ul {
+    margin-right: 0;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover {
+    min-width: 240px;
+    max-width: 240px;
+    text-align: left;
+}
+
+.default-sidebar>.side-navbar.shrinked span.heading {
+    width: 50%;
+    height: 1px;
+    background-color: #aea9c3;
+    font-size: 0;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover span.heading {
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    background-color: transparent;
+    font-size: .85rem;
+}
+
+.default-sidebar>.side-navbar.shrinked a[data-toggle="collapse"]::before {
+    display: none;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover a {
+    padding: 10px 10px;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover a[data-toggle="collapse"]::before {
+    content: '\f124';
+    display: inline-block;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 20px;
+    bottom: auto;
+    left: auto;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover a[aria-expanded="true"]::before {
+    content: '\f123';
+}
+
+.default-sidebar>.side-navbar.shrinked:hover a i {
+    margin-right: 10px;
+    margin-bottom: 0;
+    display: inline-block;
+    font-size: 1.6rem;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover a span {
+    display: inline-block;
+}
+
+.default-sidebar>.side-navbar.shrinked ul ul {
+    display: none;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover ul ul {
+    display: block;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover .collapse:not(.show) {
+    display: none;
+}
+
+.default-sidebar>.side-navbar.shrinked:hover ul ul a {
+    font-size: .85rem;
+    padding-left: 40px;
+}
+
+.compact-light-sidebar>.side-navbar ul ul a[aria-expanded="true"],
+.compact-sidebar>.side-navbar ul ul a[aria-expanded="true"] {
+    color: #e76c90;
+}
+
+.compact-light-sidebar>.side-navbar ul ul a[data-toggle="collapse"]::before,
+.compact-sidebar>.side-navbar ul ul a[data-toggle="collapse"]::before {
+    bottom: -8px;
+}
+
+/* form */
+.daterangepicker .table-condensed .month {
+    padding: 15px 0;
+}
+
+.daterangepicker select.yearselect {
+    width: 52%;
+    margin-right: 2%;
+    padding: .75rem 10px;
+}
+
+.daterangepicker select.monthselect {
+    width: 44%;
+    margin-right: 0;
+    padding: .75rem 10px;
+}
+
+.daterangepicker .daterangepicker_input i {
+    right: 8px;
+}
+
+@media (min-width: 769px) {
+    .daterangepicker.dropdown-menu {
+        max-width: 616px;
+    }
+    
+    .opensright .ranges {
+        width: 602px;
+        margin-left: 7px;
+    }
+}
+
+/* table */
+.table-bordered {
+    width: calc(100% - 1px);
+}
+
+/* login */
+.elisyam-bg {
+    height: 100%;
+    min-height: 100vh;
+}
+

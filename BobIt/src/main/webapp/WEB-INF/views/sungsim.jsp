@@ -6,7 +6,7 @@
     <meta charset="utf-8"/>
     <title>성심당 본점 지도</title>
 </head>
-<body>
+<body class="back-ye">
     <div id="map" style="width:800px;height:600px;"></div>
     <div>
         주소로 검색: <input id="addressInput" type="text">

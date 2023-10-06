@@ -4,15 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>home</title>
-<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<link rel="apple-touch-icon" type="favicon" href="/img/favicon.ico" />
 
-    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <meta name="apple-mobile-web-app-title" content="bobit">
 
-    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
 
-    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
 
 
 
@@ -38,12 +37,19 @@ body {
   font-size: 1.6rem;
   background: #fffffe;
   font-family: "Luckiest Guy", cursive;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
 }
 
 img {
   width: 100%;
 }
 
+a{
+	text-decoration: none;
+}
 header {
   position: fixed;
   left: 0;
@@ -65,6 +71,9 @@ header {
   width: 100%;
   color: #ffbf77;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.logo a{
+color: #ffbf77;
 }
 
 .menu {
@@ -153,48 +162,19 @@ footer {
 </head>
 <body translate="no">
   <header>
-  <h1 class="logo">BOBIT</h1>
+  <h1 class="logo"><a href="/temp">BOBIT</a></h1>
   <button class="menu">
-    <span></span>
+    <span><a href="/temp"></a></span>
   </button>
 </header>
 <main id="wrapper">
   <div id="content" class="o-wrapper">
     <ul class="gallery">
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
-        <li class="gal_img">
-            <img src="" alt="">
-        </li>
+       <li></li>
     </ul>
     <footer>
       <h2 class="end">
-        Let’s eat delicious food together</h2>
+        <a href="/login">Let’s eat delicious food together</a></h2>
     </footer>
   </div>
 </main>

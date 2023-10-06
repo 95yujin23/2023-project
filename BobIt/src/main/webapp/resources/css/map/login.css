@@ -1,0 +1,106 @@
+.login-container{
+    width: 440px;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+
+.login-input{
+    width: -webkit-fill-available;
+    background-color: #fff;
+    border: 1px solid #fa6616;
+    border-radius: 100px;
+    padding: 13px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-form label{
+    display: block;
+    margin-bottom:12px
+}
+
+
+.login-button{
+    width: 100%;
+    background-color: #fa6616;
+    border-radius: 100px;
+    padding: 13px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor:pointer;
+}
+
+/* social_login 요소를 flex로 배치하여 로그인 버튼을 가로로 나란히 배치합니다. */
+.social_login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* 버튼 간격 조절 */
+  }
+  
+  .social_btn {
+    display: flex;
+    align-items: center;
+    width: 48%; 
+    background-color: #fff; 
+    border-radius: 100px;
+    padding: 9px;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .social_btn:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .google_logo, .naver_logo{
+    width : 30px;
+    height : 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .social_btn + .social_btn {
+    margin-left: 10px;
+  }  
+
+  .google_logo_text, .naver_logo_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.register-reco{
+    display: flex;
+    flex-direction: column;
+}
+
+button:hover{
+    background-color: #ff823f;
+}
+
+.register-reco{
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.register-reco a{
+    text-decoration: none;
+    color: #ff823f;
+    cursor: pointer;
+}
