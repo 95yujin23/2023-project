@@ -173,7 +173,7 @@ p,span,th,td {
     word-break: keep-all;
 }
 a {
-    color: inherit;
+    color: ffdc9f;
 }
 img {
 	vertical-align: top;
@@ -187,10 +187,12 @@ button {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
 	border-radius: 0;
-    padding: 0;
-    background-color: transparent;
+    padding: 10px;
+    background-color: #dec9bc;
 	border: none;
     font-family: 'SpoqaHanSansNeo', sans-serif;
+    margin: 5px;
+    border-radius: 10px;
 }
 button>span {
     position: relative;
@@ -246,8 +248,7 @@ header.header {
     top: 0;
     left: 0;
     z-index: 9999;
-    background-color: #2c304d;
-    border-bottom: 1px solid #1fbd71;
+    background-color: #dec9bc;
 }
 header.header .h-main-area {
     width: 100%;

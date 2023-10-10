@@ -9,8 +9,8 @@ body {
     width: 100%;
     height: 100%;
     min-width: 1400px;
-    background-color: #f3f3f9;
-    color: #d3d1ff;
+    background-color: #dec9bc;
+    color: #8f7b69;
     overflow: auto;
 }
 body#popup-top {
@@ -21,7 +21,7 @@ body#popup-top::-webkit-scrollbar {
 }
 body#popup-top::-webkit-scrollbar-thumb {
     height: 10%; /* 스크롤바의 길이 */
-    background: #020038; /* 스크롤바의 색상 */
+    background: #8f7b69; /* 스크롤바의 색상 */
     background-clip: padding-box;
     border: 5px solid transparent;
     -webkit-border-radius: 999px;
@@ -40,10 +40,10 @@ body#popup-top::-webkit-scrollbar-track {
 	border-radius: 999px;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: #020038;
+    color: #8f7b69;
 }
 a {
-    color: #020038;
+    color: #8f7b69;
 }
 a:focus,
 a:hover {
@@ -89,7 +89,7 @@ a:hover {
 nav.navbar {
     height: 70px;
     min-width: 1400px;
-    background-color: #020038;
+    background-color: #8f7b69;
 }
 .navbar-header .logo-big {
     width: 70px;
@@ -117,7 +117,7 @@ nav.navbar .text-item {
 
 *************************************************/
 .default-sidebar {
-    background: #030049;
+    background: #dec9bc;
     transition: none;
 }
 .default-sidebar>.side-navbar {
@@ -129,16 +129,16 @@ nav.navbar .text-item {
     display: none; /* Chrome, Safari, Opera */
 }
 .default-sidebar>.side-navbar ul a {
-    color: #d3d1ff;
+    color: #8f7b69;
 }
 .default-sidebar>.side-navbar a[data-toggle="collapse"]::before {
-    color: #d3d1ff;
+    color: #8f7b69;
 }
 .default-sidebar>.side-navbar a[aria-expanded="true"] {
-    background: #020038;
+    background: #8f7b69;
 }
 .default-sidebar>.side-navbar a i {
-    color: #d3d1ff;
+    color: #8f7b69;
 }
 .default-sidebar>.side-navbar ul a:hover i {
     color: #ffa42a;
@@ -147,10 +147,10 @@ nav.navbar .text-item {
     color: #ffa42a;
 }
 .default-sidebar>.side-navbar ul ul {
-    background: #020038;
+    background: #8f7b69;
 }
 .default-sidebar>.side-navbar ul ul a {
-    color: #d3d1ff;
+    color: #8f7b69;
 }
 .default-sidebar>.side-navbar ul ul a:hover {
     color: #ffa42a;
@@ -197,7 +197,7 @@ footer.main-footer {
     box-shadow: 0 1px 15px 1px rgba(2,0,56,0.1);
 }
 footer.main-footer p {
-    color: #020038;
+    color: #8f7b69;
 }
 
 /************************************************
@@ -223,7 +223,7 @@ button>span {
 }
 .close:focus, 
 .close:hover {
-    color: #020038;
+    color: #8f7b69;
 }
 .btn-style01 {
     background-color: #fb8c00;
@@ -235,8 +235,8 @@ button>span {
     border-color: #ff9b1e;
 }
 .btn-style02 {
-    background-color: #020038;
-    border-color: #020038;
+    background-color: #8f7b69;
+    border-color: #8f7b69;
     color: #ffffff;
 }
 .btn-style02:hover {
@@ -302,15 +302,15 @@ button>span {
 .form-control {
     height: 40px;
     min-width: 140px;
-    color: #020038;
+    color: #8f7b69;
 }
 .form-control:focus, 
 .has-success .form-control:focus, 
 .has-danger .form-control:focus, 
 .has-warning .form-control:focus, 
 .has-info .form-control:focus {
-    border-color: #020038 !important;
-    color: #020038;
+    border-color: #8f7b69 !important;
+    color: #8f7b69;
 }
 select.form-control {
     padding-right: 2rem;
@@ -341,7 +341,7 @@ textarea.form-control::-webkit-scrollbar {
     display: inline-block;
     vertical-align: middle;
     padding-right: 2.75rem;
-    background: transparent url('../img/calendar-icon.png') no-repeat right center;
+    background: transparent url('/img/calendar-icon.png') no-repeat right center;
     background-size: auto 20px;
 }
 .datetime-control {
@@ -381,7 +381,7 @@ textarea.form-control::-webkit-scrollbar {
     background: rgba(4,0,107,0.1);
 }
 .styled-checkbox label:after {
-    color: #020038;
+    color: #8f7b69;
 }
 .styled-checkbox input[type='checkbox']:disabled,
 .styled-checkbox input[type='checkbox']:disabled + label {
@@ -418,7 +418,7 @@ textarea.form-control::-webkit-scrollbar {
     background: rgba(4,0,107,0.1);
 }
 .styled-radio label:after {
-    color: #020038;
+    color: #8f7b69;
 }
 .styled-radio input[type='radio'],
 .styled-radio input[type='radio'] + label {
@@ -477,7 +477,7 @@ textarea.form-control::-webkit-scrollbar {
     box-shadow: inset 0 2px 1px 0 rgba(0,0,0,0.2);
 }
 .switch-checkbox input[type='checkbox']:checked + .switch-bar {
-    background-color: #020038;
+    background-color: #8f7b69;
 }
 .switch-checkbox input[type='checkbox'] + .switch-bar:before {
     content: '';
@@ -517,7 +517,7 @@ textarea.form-control::-webkit-scrollbar {
     padding: 0 12px 0 0;
     background-color: transparent;
     border: none;
-    color: #020038;
+    color: #8f7b69;
     font-weight: 500;
     text-align: left;
     word-break: break-all;
@@ -601,7 +601,7 @@ textarea.form-control::-webkit-scrollbar {
     height: auto;
     display: block;
     margin-top: 4px;
-    color: #020038;
+    color: #8f7b69;
     font-size: 0.857rem;
     text-align: center;
 }
@@ -614,7 +614,7 @@ textarea.form-control::-webkit-scrollbar {
     right: -6px;
     z-index: 1;
     background-color: #ffffff;
-    color: #020038;
+    color: #8f7b69;
     font-size: 1.714em;
     line-height: 1em;
     text-align: center;
@@ -667,8 +667,8 @@ textarea.form-control::-webkit-scrollbar {
     height: 40px;
     display: inline-block;
     padding: 0 20px;
-    background-color: #020038;
-    border-color: #020038;
+    background-color: #8f7b69;
+    border-color: #8f7b69;
     color: #ffffff;
     font-size: .85rem;
     line-height: 40px;
@@ -699,12 +699,12 @@ textarea.form-control::-webkit-scrollbar {
     margin-bottom: 0;
     background-color: rgba(4,0,107,0.1);
     border-bottom: none !important;
-    color: #020038;
+    color: #8f7b69;
 }
 .nav-tabs .nav-item .nav-link.active {
     margin-bottom: 0;
     padding: 1rem;
-    background-color: #020038;
+    background-color: #8f7b69;
     border-bottom: none !important;
     color: #ffffff;
     font-weight: 600;
@@ -713,12 +713,12 @@ textarea.form-control::-webkit-scrollbar {
 .nav-tabs>li>a:hover {
     background-color: #e5e5f0;
     background-image: linear-gradient(45deg, #e5e5f0 0%, #cdcce1 100%);
-    color: #020038 !important;
+    color: #8f7b69 !important;
 }
 .nav-tabs>li.active>a, 
 .nav-tabs>li>a.active:focus,
 .nav-tabs>li>a.active:hover {
-    background-color: #020038;
+    background-color: #8f7b69;
     background-image: none;
     color: #ffffff !important;
 }
@@ -732,7 +732,7 @@ textarea.form-control::-webkit-scrollbar {
 
 *************************************************/
 .table-title {
-    color: #020038;
+    color: #8f7b69;
     font-size: 0.9rem;
 }
 .table-title:before {
@@ -743,7 +743,7 @@ textarea.form-control::-webkit-scrollbar {
     vertical-align: top;
     margin-top: 2px;
     margin-right: 5px;
-    background-color: #020038;
+    background-color: #8f7b69;
 }
 .table-title b {
     padding-right: 5px;
@@ -778,14 +778,14 @@ textarea.form-control::-webkit-scrollbar {
 .table thead th {
     padding: 20px 12px;
     border: .07rem solid #fff;
-    color: #020038;
+    color: #8f7b69;
 }
 .table-responsive::-webkit-scrollbar {
     width: 16px; /* 스크롤바의 너비 */
 }
 .table-responsive::-webkit-scrollbar-thumb {
     height: 10%; /* 스크롤바의 길이 */
-    background: #020038; /* 스크롤바의 색상 */
+    background: #8f7b69; /* 스크롤바의 색상 */
     background-clip: padding-box;
     border: 5px solid transparent;
     -webkit-border-radius: 999px;
@@ -813,7 +813,7 @@ textarea.form-control::-webkit-scrollbar {
 }
 .table-fixed .table tbody tr th {
     background-color: rgba(4,0,107,0.1);
-    color: #020038;
+    color: #8f7b69;
     font-weight: 600;
     text-align: left;
 }
@@ -842,7 +842,7 @@ textarea.form-control::-webkit-scrollbar {
 .memo-area .memo-form .memo-form-item .memo-form-left .memo-form-writer {
     display: inline-block;
     vertical-align: top;
-    color: #020038;
+    color: #8f7b69;
     line-height: 1.5em;
     font-weight: 600;
 }
@@ -877,7 +877,7 @@ textarea.form-control::-webkit-scrollbar {
 .memo-area .memo-form .memo-form-item .memo-form-content {
     margin-top: 10px;
     padding: 0 1.07rem;
-    color: #020038;
+    color: #8f7b69;
 }
 .memo-area .memo-list>li {
     padding: 15px 0;
@@ -901,13 +901,13 @@ textarea.form-control::-webkit-scrollbar {
 }
 .page-link:focus, 
 .page-link:hover {
-    color: #020038;
+    color: #8f7b69;
 }
 .page-item.disabled .page-link {
     color: rgba(179,178,210,0.3);
 }
 .page-item.active .page-link {
-    color: #020038;
+    color: #8f7b69;
 }
 
 /************************************************
@@ -916,7 +916,7 @@ textarea.form-control::-webkit-scrollbar {
 
 *************************************************/
 .bg-navy {
-    background-color: #020038 !important;
+    background-color: #8f7b69 !important;
 }
 .bg-navy .authentication-form {
     width: 100%;
@@ -944,7 +944,7 @@ textarea.form-control::-webkit-scrollbar {
     background: #ffffff;
 }
 .bg-navy .material-input label {
-    color: #d3d1ff;
+    color: #8f7b69;
 }
 .bg-navy .material-input input:focus~label,
 .bg-navy .material-input input:valid~label {
@@ -968,13 +968,18 @@ textarea.form-control::-webkit-scrollbar {
 
 *************************************************/
 .page {
-    background: #f3f3f9;
+    background-image:white;
+    height: 85rem;
+    width: 100%;
+}
+.page img{
+	opacity: 0.7;
 }
 .container-fluid {
     padding: 30px 0;
 }
 .page-header-title {
-    color: #020038;
+    color: #8f7b69;
 }
 .breadcrumb li.breadcrumb-item {
     color: #6d6d6d;
@@ -1005,7 +1010,7 @@ textarea.form-control::-webkit-scrollbar {
     font-weight: 600;
 }
 .main-price-list>li .main-price-content {
-    color: #020038;
+    color: #8f7b69;
     font-size: 2rem;
     font-weight: 600;
     font-family: "Noto Sans",sans-serif;
@@ -1079,7 +1084,7 @@ textarea.form-control::-webkit-scrollbar {
     padding: .75rem;
     background-color: #ffffff;
     border: 1px solid #eeeeee;
-    color: #020038;
+    color: #8f7b69;
     font-size: 0;
     border-radius: 4px;
     overflow-y: auto;
@@ -1154,7 +1159,7 @@ textarea.form-control::-webkit-scrollbar {
 
 *************************************************/
 #preloader {
-    background-color: #020038;
+    background-color: #8f7b69;
 }
 .spinner {
     border-top: solid 5px #ffffff;
@@ -1166,11 +1171,11 @@ textarea.form-control::-webkit-scrollbar {
 
 *************************************************/
 .go-top {
-    color: #020038;
+    color: #8f7b69;
 }
 .go-top:hover,
 .go-top:focus {
-    color: #020038;
+    color: #8f7b69;
 }
 
 /************************************************
@@ -1198,11 +1203,11 @@ textarea.form-control::-webkit-scrollbar {
     overflow: hidden;
 }
 .modal .modal-header .modal-title {
-    color: #020038;
+    color: #8f7b69;
     font-weight: 600;
 }
 .modal .modal-body .modal-body-text {
-    color: #020038;
+    color: #8f7b69;
     font-weight: 600;
     text-align: center;
 }
@@ -1210,7 +1215,7 @@ textarea.form-control::-webkit-scrollbar {
     flex-shrink: 0;
     margin-right: 8px;
     padding: 3px 10px 3px 5px;
-    background-color: #020038;
+    background-color: #8f7b69;
     color: #ffffff;
     font-size: 0.857rem;
     line-height: 1.667em;
@@ -1225,15 +1230,15 @@ textarea.form-control::-webkit-scrollbar {
     display: inline-block;
     vertical-align: top;
     margin: 2px 5px 0 0;
-    background: transparent url('../img/list-icon.png') no-repeat center;
+    background: transparent url('/img/list-icon.png') no-repeat center;
     background-size: contain;
 }
 .modal .modal-body .modal-body-list>li .list-content {
-    color: #020038;
+    color: #8f7b69;
     line-height: 1.857em;
 }
 .modal .modal-body .modal-body-form {
-    color: #020038;
+    color: #8f7b69;
 }
 .modal .modal-body .modal-body-form .form-control {
     border-color: rgba(4,0,107,0.1);
@@ -1250,7 +1255,7 @@ textarea.form-control::-webkit-scrollbar {
 .modal .modal-body .table td {
     height: 40px;
     padding: 5px;
-    color: #020038;
+    color: #8f7b69;
 }
 .modal .modal-body .table-sm th,
 .modal .modal-body .table-sm td {
@@ -1275,7 +1280,7 @@ textarea.form-control::-webkit-scrollbar {
 }
 .modal .modal-body .mri-slide-area::-webkit-scrollbar-thumb {
     height: 10%; /* 스크롤바의 길이 */
-    background: #020038; /* 스크롤바의 색상 */
+    background: #8f7b69; /* 스크롤바의 색상 */
     background-clip: padding-box;
     border: 5px solid transparent;
     -webkit-border-radius: 999px;
@@ -1367,7 +1372,7 @@ textarea.form-control::-webkit-scrollbar {
     cursor: pointer;
 }
 .slider-nav .slick-slide img {
-    color: #020038;
+    color: #8f7b69;
     font-size: 0.857rem;
     line-height: 1.333em;
 }
@@ -1380,16 +1385,16 @@ textarea.form-control::-webkit-scrollbar {
     display: flex !important;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #020038;
+    background-color: #8f7b69;
 }
 .slider-nav .slick-slide .slider-nav-item .slider-nav-text {
     margin-top: 4px;
-    color: #020038;
+    color: #8f7b69;
     font-size: 0.857rem;
     text-align: center;
 }
 .slider-cnt {
-    color: #020038;
+    color: #8f7b69;
     font-weight: 600;
 }
 
@@ -1407,7 +1412,7 @@ textarea.form-control::-webkit-scrollbar {
 }
 .datepicker table {
     border-collapse: separate;
-    color: #020038;
+    color: #8f7b69;
 }
 .datepicker table tr td,
 .datepicker table tr th {
@@ -1498,7 +1503,7 @@ textarea.form-control::-webkit-scrollbar {
 .datepicker table tr td.active.highlighted:active.focus, 
 .datepicker table tr td.active.active.focus, 
 .datepicker table tr td.active.highlighted.active.focus {
-    background-color: #020038;
+    background-color: #8f7b69;
     border-color: #ffffff;
     color: #ffffff;
 }
@@ -1534,7 +1539,7 @@ textarea.form-control::-webkit-scrollbar {
 .datepicker table tr td span.active:hover.active.focus, 
 .datepicker table tr td span.active.disabled.active.focus, 
 .datepicker table tr td span.active.disabled:hover.active.focus {
-    background-color: #020038;
+    background-color: #8f7b69;
     border-color: #ffffff;
     color: #ffffff;
 }
@@ -1551,7 +1556,7 @@ textarea.form-control::-webkit-scrollbar {
     z-index: 1211 !important;
 }
 .bootstrap-timepicker-widget table {
-    color: #020038;
+    color: #8f7b69;
 }
 .bootstrap-timepicker-widget table td {
     vertical-align: middle;
@@ -1559,7 +1564,7 @@ textarea.form-control::-webkit-scrollbar {
 .bootstrap-timepicker-widget table td a {
     width: 32px;
     height: 30px;
-    color: #020038;
+    color: #8f7b69;
     line-height: 1em;
 }
 .bootstrap-timepicker-widget table td a:hover {
@@ -1613,7 +1618,7 @@ textarea.form-control::-webkit-scrollbar {
     min-width: auto;
     padding: 0;
     border: 4px solid #ffffff;
-    color: #020038;
+    color: #8f7b69;
     font-size: 1rem;
     line-height: 30px;
     border-radius: 8px;
@@ -1621,7 +1626,7 @@ textarea.form-control::-webkit-scrollbar {
 .daterangepicker .drp-calendar .calendar-table table .next span, 
 .daterangepicker .drp-calendar .calendar-table table .prev span {
     border-width: 0 1px 1px 0;
-    border-color: #020038;
+    border-color: #8f7b69;
 }
 .daterangepicker .drp-calendar .calendar-table table .next span {
     margin-right: 3px;
@@ -1644,7 +1649,7 @@ textarea.form-control::-webkit-scrollbar {
     background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
     background-size: 8px 10px;
     border: 1px solid #eee;
-    color: #020038;
+    color: #8f7b69;
     font-size: 1rem;
     line-height: 1.25;
     border-radius: 4px;
@@ -1652,8 +1657,8 @@ textarea.form-control::-webkit-scrollbar {
 }
 .daterangepicker select.monthselect:focus, 
 .daterangepicker select.yearselect:focus {
-    border-color: #020038;
-    color: #020038;
+    border-color: #8f7b69;
+    color: #8f7b69;
 }
 .daterangepicker .drp-calendar .calendar-table table thead tr:last-child {
     background-color: rgba(4,0,107,0.1);
@@ -1694,7 +1699,7 @@ textarea.form-control::-webkit-scrollbar {
 }
 .daterangepicker td.active, 
 .daterangepicker td.active:hover {
-    background-color: #020038 !important;
+    background-color: #8f7b69 !important;
     color: #ffffff !important;
 }
 .daterangepicker td.available:hover, 
@@ -1704,7 +1709,7 @@ textarea.form-control::-webkit-scrollbar {
 .daterangepicker .calendar-time {
     margin: 0;
     padding: 4px 8px 8px;
-    color: #020038;
+    color: #8f7b69;
 }
 .daterangepicker select.hourselect, 
 .daterangepicker select.minuteselect, 
@@ -1719,7 +1724,7 @@ textarea.form-control::-webkit-scrollbar {
     background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
     background-size: 8px 10px;
     border: 1px solid #eee;
-    color: #020038;
+    color: #8f7b69;
     font-size: 1rem;
     line-height: 1.25;
     border-radius: 4px;
@@ -1758,8 +1763,8 @@ textarea.form-control::-webkit-scrollbar {
     max-height: 209px;
     display: inline-block;
     background-color: #ffffff;
-    border: 2px solid #d3d1ff !important;
-    color: #020038;
+    border: 2px solid #8f7b69 !important;
+    color: #8f7b69;
     -webkit-box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1), -4px 4px 10px 0 rgba(0,0,0,0.15);
     -moz-box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1), -4px 4px 10px 0 rgba(0,0,0,0.15);
     box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1), -4px 4px 10px 0 rgba(0,0,0,0.15);
@@ -1792,7 +1797,7 @@ a.ui-button:active,
 .ui-button.ui-state-active:hover {
     background-color: rgba(4,0,107,0.1);
     border: none;
-    color: #020038;
+    color: #8f7b69;
 }
 .ui-helper-hidden-accessible {
     display: none;

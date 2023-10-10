@@ -1,0 +1,85 @@
+/* 웹폰트 */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-style: bold;
+}
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'NanumSquare', sans-serif;
+    font-weight: 600;
+    word-spacing: -0.3px;
+}
+/* clearfix */
+.clearfix::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+a{
+    color:inherit;
+    text-decoration: underline 1px solid #8f7b69;
+}
+.container{
+    width: 358px;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+}
+/* 로고 영역 */
+.intro{
+    width: 262px;
+    height: 308px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.intro img{
+    width: 100%;
+    margin-bottom: 46px;
+}
+.intro h1{
+    font-size: 3em;
+    font-family: 'LINESeedKR-Bd';
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+.intro p{
+    color: #8f7b69;
+}
+/* 버튼 영역 */
+.tab{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+}
+.tab .tabUp{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+button{
+    width: 176px;
+    height: 48px;
+    text-align: center;
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 17px;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background: #ed7459;
+    cursor: pointer;
+}
+.tab .tabDown{
+    text-align: center;
+}

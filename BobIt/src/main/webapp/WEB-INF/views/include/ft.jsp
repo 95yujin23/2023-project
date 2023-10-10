@@ -9,7 +9,7 @@
     .ft {
         clear: both;
         width: 100%;
-        box-shadow: 0px -10px 30px #ccc;
+        box-shadow: 0px -10px 30px #8f7b69;
     }
 
     .ft::after {
@@ -155,7 +155,7 @@
         content: "|";
         padding-left: 20px;
         padding-right: 20px;
-        color: #ccc;
+        color: #8f7b69;
     }
 
     .copyright span.end::after {
@@ -164,10 +164,10 @@
     }
 
     .cp {
-        font-size: 12px;
-        color: #ccc;
+        font-size: 15px;
+        color: #8f7b69;
         line-height: 20px;
-        margin-top: 10px;
+        margin-top: 15px;
         text-align: center;
     }
 

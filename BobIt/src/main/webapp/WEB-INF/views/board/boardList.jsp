@@ -86,21 +86,20 @@
 			</div>
 			<!-- End Left Sidebar -->
 
-			<div class="content-inner">
-				<div class="container-fluid">
 
-					<!-- c-list + c-evaluation -->
-					<section class="c-list c-evaluation">
-						<div class="center-ct">
-							<div class="c-list-area">
-								<div class="c-list-top">
-									<div class="tit">게시판</div>
-								</div>
 
-								<div class="c-list-main">
-									<div class="c-list-search-area">
-										<div class="c-list-search-bundle">
-											<!-- <div class="c-list-search-item">
+			<!-- c-list + c-evaluation -->
+			<section class="c-list c-evaluation">
+				<div class="center-ct">
+					<div class="c-list-area">
+						<div class="c-list-top">
+							<div class="tit">게시판</div>
+						</div>
+
+						<div class="c-list-main">
+							<div class="c-list-search-area">
+								<div class="c-list-search-bundle">
+									<!-- <div class="c-list-search-item">
 												<div class="tit">매칭상태</div>
 												<div class="con">
 													<div class="c-checkbox">
@@ -115,86 +114,82 @@
 													</div>
 												</div>
 											</div> -->
-											<!-- full-item : 검색영역을 꽉채울 경우 추가 -->
-											<div class="c-list-search-item full-item">
-												<div class="tit">검색</div>
-												<div class="con">
-													<input type="text" id="" name="" placeholder="검색어">
-												</div>
-												<div class="c-list-search-btn">
-													<button type="button" class="c-default-btn08 search-btn"
-														onclick="">
-														<span>검색</span>
-													</button>
-												</div>
-											</div>
+									<!-- full-item : 검색영역을 꽉채울 경우 추가 -->
+									<div class="c-list-search-item full-item">
+										<div class="tit">검색</div>
+										<div class="con">
+											<input type="text" id="" name="" placeholder="검색어">
 										</div>
-
-									</div>
-
-									<!-- c-list-header-table : 리스트 header 테이블 -->
-									<div class="c-list-table-area c-list-header-table">
-										<table class="c-list-table">
-											<colgroup>
-												<col>
-												<col>
-												<col>
-												<col>
-												<col>
-											</colgroup>
-											<thead>
-												<tr>
-													<th>번호</th>
-													<th>제목</th>
-													<th>작성자</th>
-													<th>작성일</th>
-													<th>관리</th>
-												</tr>
-											</thead>
-											<tbody>
-												<c:forEach items="${list}" var="vo" varStatus="status">
-													<tr>
-														<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardNo}</a></td>
-														<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardSj}</a></td>
-														<td>${vo.memNick}</td>
-														<td>${vo.boardDate}</td>
-														<td><a href="deleteBoard/${vo.boardNo}"
-															class="button">삭제</a> <a href="updateBoard/${vo.boardNo}"
-															class="button">수정</a></td>
-													</tr>
-												</c:forEach>
-											</tbody>
-										</table>
-									</div>
-
-
-
-									<div class="c-list-paging-area">
-										<ul class="c-list-paging">
-											<li class="arrow first-arrow disabled"><a href="#"></a>
-											</li>
-											<li class="arrow prev-arrow disabled"><a href="#"></a></li>
-											<li class="on"><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li class="arrow next-arrow"><a href="#"></a></li>
-											<li class="arrow last-arrow disabled"><a href="#"></a></li>
-										</ul>
+										<div class="c-list-search-btn">
+											<button type="button" class="c-default-btn08 search-btn"
+												onclick="">
+												<span>검색</span>
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</section>
-				</div>
-				<!-- 푸터 부분 인클루드 -->
-				<jsp:include page="../include/ft.jsp"></jsp:include>
-				
-			</div>
+
+							<!-- c-list-header-table : 리스트 header 테이블 -->
+							<div class="c-list-table-area c-list-header-table">
+								<table class="c-list-table">
+									<colgroup>
+										<col>
+										<col>
+										<col>
+										<col>
+										<col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th>번호</th>
+											<th>제목</th>
+											<th>작성자</th>
+											<th>작성일</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach items="${list}" var="vo" varStatus="status">
+											<tr>
+												<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardNo}</a></td>
+												<td><a href="/board/selectBoard/${vo.boardNo}">${vo.boardSj}</a></td>
+												<td>${vo.memNick}</td>
+												<td>${vo.boardDate}</td>
+												<td><a href="deleteBoard/${vo.boardNo}" class="button">삭제</a>
+													<a href="updateBoard/${vo.boardNo}" class="button">수정</a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+								<%-- <c:if test='${sid eq "admin"}'>  --%>
+								<div class="button-group">
+									<a class="col3 button" href="insertBoard"><span>등록</span></a>
+								</div>
+								<%-- </c:if> --%>
+							</div>
+
+
+
+							<div class="c-list-paging-area">
+								<ul class="c-list-paging">
+									<li class="arrow first-arrow disabled"><a href="#"></a></li>
+									<li class="arrow prev-arrow disabled"><a href="#"></a></li>
+									<li class="on"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li class="arrow next-arrow disabled"><a href="#"></a></li>
+									<li class="arrow last-arrow disabled"><a href="#"></a></li>
+								</ul>
+			</section>
 		</div>
+
+	</div>
+	<!-- 푸터 부분 인클루드 -->
+	<jsp:include page="../include/ft.jsp"></jsp:include>
 	</div>
 	<!-- End Page Content -->
-	</div>
 </body>
 </html>

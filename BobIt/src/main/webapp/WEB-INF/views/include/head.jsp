@@ -41,6 +41,7 @@
 <link rel="stylesheet" href="/css/admin-main.css">
 <link rel="stylesheet" href="/css/member-common.css">
 <link rel="stylesheet" href="/css/member-main.css">
+<link rel="stylesheet" href="/css/main_new.css">
 
 <!-- Google Fonts -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>

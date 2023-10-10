@@ -12,11 +12,10 @@
 	<div class="h-main-area">
 		<div class="center-ct">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand"> <img src="/img/logo.png"
+				<a href="/temp" class="navbar-brand"> <img src="/img/logo_bl.png"
 					alt="logo" class="logo-big"><br> 
 				</a>
-				<p class="logo-txt"
-					style="font-size: 35px; margin-top: 20px;">BOBIT</p>
+				
 			</div>
 
 			<ul class="h-main-menu cf">
@@ -24,7 +23,7 @@
 				</li>
 				<li>
 					<button type="button" class="c-default-btn01 logout-btn"
-						onclick="location.href='login.html';">
+						onclick="location.href='/login';">
 						<span>로그아웃</span>
 					</button>
 				</li>

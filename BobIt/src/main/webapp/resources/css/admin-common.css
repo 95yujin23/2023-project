@@ -247,7 +247,6 @@ header.header {
     left: 0;
     z-index: 9;
     background-color: #ffffff;
-    border-bottom: 1px solid #1fbd71;
 }
 header.header .h-main-area {
     width: 100%;
