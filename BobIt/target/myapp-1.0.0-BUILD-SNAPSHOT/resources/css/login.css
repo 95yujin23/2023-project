@@ -1,0 +1,117 @@
+main{
+	position: relative;
+	height: 800px;
+}
+.loginBtn {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.loginBtn h2 {
+	padding: 0 0 20px;
+	border-bottom: 2px solid #2a3038;
+	text-align: center;
+	line-height: 1;
+	font-size: 32px;
+	color: #111;
+}
+
+.loginBtn>ul {
+	padding: 40px 0 33px;
+}
+
+.loginBtn>ul li {
+	padding: 0 0 12px;
+	text-align: left;
+}
+
+.loginBtn>ul li input {
+	width: 100%;
+	height: 46px;
+	box-sizing: border-box;
+	text-indent: 16px;
+}
+
+.loginBtn>ul li input::-webkit-input-placeholder {
+	font-size: 16px;
+	color: #9fa19f;
+}
+
+.loginBtn>ul li input[type="checkbox"] {
+	position: absolute;
+	left: -3000%;
+}
+
+.loginBtn>ul li input[type="checkbox"]+label {
+	height: 36px;
+	line-height: 36px;
+}
+
+.loginBtn>ul li input[type="checkbox"]+label:before {
+	content: "";
+	display: inline-block;
+	margin: 0 10px 0 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #666;
+	background: #fff;
+	vertical-align: -5px;
+}
+
+.loginBtn>ul li input[type="checkbox"]:checked+label:before {
+	background: url(../images/ico_check_on.png) no-repeat center #333;
+	border-color: #333;
+}
+
+.loginBtn button {
+	width: 100%;
+	height: 56px;
+	background: #6f5035;
+	font-size: 18px;
+	color: #fff;
+}
+
+.loginBtn div {
+	padding: 0 0 45px;
+}
+
+.loginBtn div ul {
+	display: flex;
+	justify-content: center;
+}
+
+.loginBtn div ul li {
+	position: relative;
+	padding: 0 18px;
+}
+
+.loginBtn div ul li ~ li:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 4px;
+	height: 14px;
+	width: 1px;
+	background: #111;
+	transform: rotate(25deg);
+}
+
+.loginBtn div ul li a {
+	font-size: 14px;
+	color: #111;
+}
+
+.loginBtn>a {
+	font-size: 14px;
+	color: #666;
+	border-bottom: 1px solid #666;
+}
+/* .loginBtn > a { position: relative; font-size: 14px; color:#666;}
+.loginBtn > a:after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #666;} */
+
+/*  */

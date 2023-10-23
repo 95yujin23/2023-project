@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+    font-family: 'Jua', sans-serif;
+    margin: 10px;
+    padding: 5px;
+}
+h2{
+    text-align: center;
+}
+table{
+    margin: 0 auto;
+}
+input, #address{
+    border: 0;
+    border-bottom: 2px solid rgb(188, 212, 255);
+    width: 130px;
+}
+.fontcolor{
+    color: gray;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100px;
+}
+.button{
+    background-color: aliceblue;
+    border: 2px solid cornflowerblue;
+    padding: 16px 32px;
+}
+.button:hover{
+    background-color: rgb(153, 204, 255);
+}

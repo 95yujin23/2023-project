@@ -1,0 +1,143 @@
+.ft {
+	clear: both;
+	width: 100%;
+	margin-top: 10px;
+	height: 100px;
+	position: fixed;
+}
+
+.ft::after {
+	content: "";
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+.ft_wrap {
+	clear: both;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 30px;
+	padding-top: 60px;
+}
+
+.ft_link {
+	clear: both;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.ft_link::after {
+	content: "";
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+.fnb {
+	float: left;
+}
+
+.fnb::after {
+	content: "";
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+.fnb li {
+	float: left;
+}
+
+.fnb li::after {
+	content: " |";
+	color: black;
+	padding: 0 10px;
+}
+
+.fnb li:last-child::after {
+	content: "";
+}
+
+.snb {
+	float: right;
+}
+
+.snb::after {
+	content: "";
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+.snb li {
+	float: left;
+	margin-left: 14px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.snb li a {
+	display: block;
+	width: 34px;
+	height: 34px;
+	overflow: hidden;
+	text-indent: -9999px;
+	border-radius: 20px;
+}
+
+.locate {
+	float: right;
+}
+
+.snb li.locate {
+	background-image: none;
+	width: 200px;
+	height: 34px;
+	margin-top: 0;
+	line-height: 48px;
+}
+
+.snb li.locate option {
+	display: block;
+	height: 48px;
+	line-height: 48px;
+	min-height: 48px;
+}
+
+/*.ft_link li { line-height: 48px; }*/
+#sel {
+	height: 40px;
+	width: 200px;
+}
+
+.ft_wrap2 {
+	clear: both;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.copyright {
+	line-height: 20px;
+	font-size: 12px;
+}
+
+.copyright span::after {
+	content: "|";
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #8f7b69;
+}
+
+.copyright span.end::after {
+	content: "";
+	padding-right: 0;
+}
+
+.cp {
+	font-size: 18px;
+	color: #8f7b69;
+	line-height: 100px;
+	text-align: center;
+}
+

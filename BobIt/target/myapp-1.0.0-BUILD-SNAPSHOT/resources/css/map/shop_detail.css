@@ -1,0 +1,111 @@
+/* 공통 */
+.region-flex {
+    display:flex;
+    justify-content: flex-start;
+}
+.region-detail {
+    margin-top: 65px;
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+li > img {
+    width: 760px;
+    height: 460px;
+    border-radius: 10px;
+}
+
+/*이미지 슬라이더*/
+.image-list .image-item{
+    display:none;
+}
+.image-list .image-item:first-child {
+    display: block;
+  }
+
+/* 썸네일 */
+.thumnail > img{
+    width:50px;
+    height:50px;
+    border-radius: 30px;
+}
+
+/*가게 정보 */
+.shop-info{
+    margin-top: 15px;
+    width:760px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:5px;
+}
+.list-content-item-name-wraper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    gap: 5px;
+}
+.list-content-item-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+.list-content-item-region {
+    padding-top:5px;
+    font-size: 15px;
+    font-weight:500;
+    color: #333;
+}
+.list-content-item-description {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.shop-detail{
+    flex-direction: column;
+    width:760px;
+    margin-top:15px;
+    gap:15px;
+    color: #212124;
+}
+.shop-detail h6{
+    font-size: 20px;
+    font-weight: 600;
+}
+.shop-detail p{
+    font-size: 18px;
+}
+.shop-price {
+    flex-direction: column;
+    width: 760px;
+    color: #212124;
+}
+.shop-price h6 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.price-list{
+    margin-top: 15px;
+}
+.list-item-price {
+    margin-top: 15px;
+    display:flex;
+    justify-content: space-between;
+}
+.product-space{
+    background-color:#212124;
+}
+.option{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #F2F3F6;
+    margin-top: 10px;
+    height: auto;
+    padding:10px 10px 10px 10px;
+}

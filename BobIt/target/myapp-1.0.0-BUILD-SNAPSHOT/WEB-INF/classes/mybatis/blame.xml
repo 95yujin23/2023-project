@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="blame">
+
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_BOARD 
+		WHERE BOARD_TYPE='B'
+		ORDER BY BOARD_NO
+	</select>
+	
+	<select id="selectblamelist" resultType="BoardVO">
+		SELECT * FROM
+		TBL_BOARD 
+		WHERE BOARD_TYPE='B'
+		ORDER BY BOARD_NO DESC		
+	</select>
+	
+	<select id="selectblame" resultType="BoardVO">
+		SELECT * FROM TBL_BOARD
+		WHERE BOARD_NO = #{boardNo} AND BOARD_TYPE='B'
+	</select>
+	
+	<insert id="insertblame">
+	INSERT INTO TBL_BOARD
+	(MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE, BOARD_TYPE, BOARD_USE)
+	VALUES (#{memNick}, #{boardSj}, #{boardCn},  now(), 'B', '접수중')
+	</insert>
+	
+	<update id="updateblame">
+	UPDATE TBL_BOARD SET 
+	BOARD_SJ=#{boardSj}, BOARD_CN=#{boardCn}
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='B'
+	</update>
+	
+	<update id="takeblame">
+	UPDATE TBL_BOARD SET
+	BOARD_USE='처리중'
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='B'
+	</update>
+	
+	<update id="compleblame">
+	UPDATE TBL_BOARD SET
+	BOARD_USE='완료'
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='B'
+	</update>
+	
+	<update id="deniedblame">
+	UPDATE TBL_BOARD SET
+	BOARD_USE='거절'
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='B'
+	</update>
+	
+	<update id="deleteblame">
+	UPDATE TBL_BOARD SET
+	BOARD_USE='N'
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='B'
+	</update>
+
+</mapper>
+	

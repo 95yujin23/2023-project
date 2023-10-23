@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="alert">
+	
+	<select id="total" resultType="Integer">
+	SELECT COUNT(*) FROM
+	TBL_ALERT
+	WHERE ALERT_USE='Y'
+	AND MEM_NICK=#{memNick}
+	ORDER BY ALERT_NO
+	</select>
+
+	<select id="selectalertlist" resultType="AlertVO">
+	SELECT *
+	FROM TBL_ALERT
+	WHERE ALERT_USE='Y'
+	AND MEM_NICK=#{memNick}
+	ORDER BY ALERT_CHECK, ALERT_NO DESC
+	LIMIT #{curPage}, #{perPage}
+	</select>
+	
+	<select id="selectalert" resultType="AlertVO">
+	SELECT *
+	FROM TBL_ALERT
+	WHERE ALERT_USE='Y'
+	AND ALERT_NO=#{alertNo}
+	</select>
+	
+	<insert id="sendalert">
+	INSERT INTO TBL_ALERT
+	(MEM_NICK, ALERT_CN, ALERT_DATE, ALERT_FROM)
+	VALUES (#{memNick}, #{alertCn}, NOW(), #{alertFrom})
+	</insert>
+	
+	<update id="deletealert">
+	UPDATE TBL_ALERT SET
+	ALERT_USE = 'N'
+	WHERE ALERT_NO=#{alertNo}
+	</update>
+	
+	<select id="newalert" resultType="Integer">
+	SELECT COUNT(*) FROM
+	TBL_ALERT
+	WHERE ALERT_USE='Y'
+	AND ALERT_CHECK='미확인'
+	AND MEM_NICK=#{memNick}
+	ORDER BY ALERT_NO
+	</select>
+	
+	<update id="checkalert">
+	UPDATE TBL_ALERT SET
+	ALERT_CHECK = '확인'
+	WHERE ALERT_NO = #{alertNo}
+	</update>
+	
+	
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mtapply">
+
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_MTAPPLY ORDER BY MTAPPLY_NO 
+	</select>
+	
+	<select id="selectmtapplylist" resultType="MtapplyVO">
+		SELECT * FROM
+				TBL_MTAPPLY 
+				ORDER BY MTAPPLY_NO DESC		
+	</select>
+	
+	<select id="selectmtapply" resultType="MtapplyVO">
+		SELECT TBL_MTAPPLY.MTAPPLY_NO MTAPPLY_NO, TBL_MTAPPLY.MEET_NO MEET_NO, TBL_MTAPPLY.MEM_NICK MEM_NICK, TBL_MTAPPLY.MTAPPLY_YN MTAPPLY_YN, TBL_MEET.MEET_SJ MEET_SJ 
+		FROM TBL_MEET JOIN TBL_MTAPPLY ON TBL_MEET.MEET_NO = TBL_MTAPPLY.MEET_NO 
+		WHERE TBL_MTAPPLY.MTAPPLY_NO = #{mtapplyNo};
+	</select>
+	
+	<insert id="insertmtapply">
+	INSERT INTO TBL_MTAPPLY
+	(MEET_NO, MEM_NICK)
+	VALUES (#{meetNo}, #{memNick})
+	</insert>
+	
+	<update id="agreemtapply">
+	UPDATE TBL_MTAPPLY SET 
+	MTAPPLY_YN='승낙'
+	WHERE MTAPPLY_NO=#{mtapplyNo}
+	</update>
+	
+	<update id="deniedmtapply">
+	UPDATE TBL_MTAPPLY SET
+	MTAPPLY_YN='거절'
+	WHERE MTAPPLY_NO=#{mtapplyNo}
+	</update>
+	
+	<update id="waitmtapply">
+	UPDATE TBL_MTAPPLY SET
+	MTAPPLY_YN='신청'
+	WHERE MTAPPLY_NO=#{mtapplyNo}
+	</update>
+	
+	<select id="selectmeetapplylist" resultType="MtapplyVO">
+	SELECT * FROM
+	TBL_MTAPPLY 
+	WHERE MEET_NO=#{meetNo}
+	ORDER BY MTAPPLY_NO;
+	</select>
+	
+	<select id="existapply" resultType="Integer">
+	SELECT COUNT(*) FROM
+	TBL_MTAPPLY
+	WHERE MEET_NO = #{meetNo}
+	AND MEM_NICK = #{memNick}
+	</select>
+</mapper>
+	

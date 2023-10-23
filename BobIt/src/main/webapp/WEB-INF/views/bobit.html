@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>BOBIT을 소개합니다.</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+body {
+	line-height: 1;
+	min-width: 1200px;
+	margin: 0 auto;
+}
+
+#wrap {
+	width: 100%;
+	height: auto;
+}
+
+#haeader {
+	min-width: 100%;
+}
+
+#haeader .header_container {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 2px solid #2a3038;
+	min-height: 80px;
+	align-items: center;
+}
+
+#haeader .header_container .logo {
+	width: 20%;
+	height: 80px;
+	text-align: center;
+	vertical-align: baseline;
+}
+
+#haeader .header_container .intro {
+	width: 75%;
+	height: 80px;
+	text-align: center;
+	vertical-align: baseline;
+	position: relative;
+}
+
+#haeader .header_container button {
+	width: 5%;
+	height: 80px;
+	background-color: #2a3038;
+	color: #eee;
+}
+
+#haeader .header_container .intro h2 {
+	position: absolute;
+	font-size: 50px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#contents {
+	min-width: 1200px;
+	min-height: 800px;
+	margin: 0 auto;
+	display: flex;
+}
+
+#contents .contents-1 {
+	width: 45%;
+	min-height: 200px;
+	margin: 0 auto;
+	border: 3px solid #000;
+	padding: 20px;
+	border-radius: 20px 20px 5px 5px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+#contents .contents-2 {
+	width: 45%;
+	min-height: 200px;
+	margin: 0 auto;
+	border: 3px solid #000;
+	padding: 20px;
+	border-radius: 20px 20px 5px 5px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+#contents h3 {
+	font-size: 50px;
+	height: 70px;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	border-bottom: 2px solid #eee;
+	text-align: center;
+}
+
+#contents p {
+	font-size: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 95%;
+	margin: 0 auto;
+	color: #213555;
+	font-weight: 500;
+	line-height: 4rem;
+}
+
+/*#footer {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            vertical-align: baseline;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 120px;
+            background-color: #9d9d9d;
+        }
+
+        #footer .footer2 {
+            width: 80%;
+        }
+
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
+            background-color: #929292;
+        }
+
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #838383;
+        }*/
+/* footer */
+footer {
+	width: 100%;
+	display: flex;
+	background: #2a3038;
+	padding: 10px 0;
+	text-align: center;
+	color: #fff;
+	justify-content: space-between;
+	min-height: 130px;
+	align-items: center;
+}
+
+#footer .footer1 {
+	width: 200px;
+	height: 80px;
+}
+
+#footer img {
+	height: 70px;
+	opacity: 0.8;
+	padding-left: 5px;
+}
+
+#footer .footer2 {
+	width: 80%;
+}
+
+#footer .footer2 .footer2-1 {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+
+#footer .footer2 .footer2-1 ul {
+	padding-top: 24px;
+}
+
+#footer .footer2 .footer2-1 li {
+	display: inline-block;
+	border-right: 1px solid #fff;
+}
+
+#footer .footer2 .footer2-1 li:last-child {
+	border: 0;
+}
+
+#footer .footer2 .footer2-1 li a {
+	padding: 10px;
+	color: #f6f8fa;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+#footer .footer2 .footer2-1 li a:hover {
+	text-decoration: underline;
+}
+
+#footer .footer2 .footer2-2 {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	padding-top: 10px;
+	box-sizing: border-box;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+#header img {
+	height: 75px;
+}
+
+.backHome {
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.backHome button {
+	width: 150px;
+	height: 50px;
+	border-radius: 7px;
+	background-color: #213555;
+	color: #eee;
+}
+</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<header id="haeader">
+			<div class="header_container">
+				<h1 class="logo">
+					<a href="/" class="logo"><img src="/img/logo.png"></a>
+				</h1>
+				<div class="intro">
+					<h2>BOBIT을 소개합니다.</h2>
+				</div>
+				<button type="button" id="back">이전으로</button>
+			</div>
+		</header>
+
+		<main id="contents">
+			<div class="contents-1">
+				<h3>BOBIT은 왜 BOBIT(밥잇)인가요?</h3>
+				<p>
+					네이밍을 할 때 서로 만나 밥을 먹는 것을 <br> 밥상을 잇다로 표현하면 어떨까 하는 생각과<br>
+					먹다의 발음이 잇이라 <br>밥을먹다로 풀어내보았습니다.
+				</p>
+			</div>
+			<div class="contents-2">
+				<h3>BOBIT을 소개해주세요~</h3>
+				<p>
+					BOBIT은 혼자 밥을 먹게 되면 의사소통이 없고 <br> 밥을 먹으면서 휴대폰 등의 전자기기를 쳐다보는 <br>모습을
+					자주 접할 수 있는데 <br>같이 밥을 먹음으로써 정서적인 행복을 얻을 수 있고 <br>또한, 까다로운
+					입맛을 고칠 수 있다는 <br>연구 결과를 보고 혼자 밥을 먹는 사람들끼리 <br>매칭하여 서로 만나
+					밥을 먹는 것은 어떨까 하며 <br> 제작하게 되었습니다.
+				</p>
+			</div>
+		</main>
+		<!-- //contents -->
+		<div class="backHome">
+			<button type="button" id="back">이전으로</button>
+		</div>
+		<footer id="footer">
+			<div class="footer1">
+				<img alt="footerLogo" src="/img/logo-b.png">
+			</div>
+			<div class="footer2">
+				<div class="footer2-1">
+					<ul>
+						<li><a href="#" class="popup-btn">개인정보처리방침</a></li>
+						<li><a href="#" class="popup-btn">저작권보호정책</a></li>
+						<li><a href="#" class="popup-btn">이메일무단수집거부</a></li>
+					</ul>
+				</div>
+				<div class="footer2-2">COPYRIGHT 2023, All Rights Reseved</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<script>
+        
+     document.querySelector('#back').onclick = function(){
+         history.back();
+     }
+    </script>
+</body>
+</html>

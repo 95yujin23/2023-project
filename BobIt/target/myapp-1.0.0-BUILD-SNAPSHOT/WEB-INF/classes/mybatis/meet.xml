@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="meet">
+ 	<sql id="search">
+		<if test="keyword == null or keyword ==''">
+				AND TBL_MEET.MEET_AREA LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+		</if>
+	</sql>
+	
+	<sql id="searchmenu">
+			<if test="searchmenu == 1">
+			AND TBL_MEET.MEET_MENU = '한식'
+			</if>
+			<if test="searchmenu == 2">
+			AND TBL_MEET.MEET_MENU = '중식'
+			</if>
+			<if test="searchmenu == 3">
+			AND TBL_MEET.MEET_MENU = '양식'
+			</if>
+			<if test="searchmenu == 4">
+			AND TBL_MEET.MEET_MENU = '일식'
+			</if>
+			<if test="searchmenu == 5">
+			AND TBL_MEET.MEET_MENU = '분식'
+			</if>
+			<if test="searchmenu == 6">
+			AND TBL_MEET.MEET_MENU = '기타'
+			</if>
+	</sql>
+	
+	<sql id="searchfm">
+		<if test="searchfm == 1">
+				AND TBL_MEET.MEET_FM = '여'
+			</if>
+			<if test="searchfm == 2">
+				AND TBL_MEET.MEET_FM = '남'
+			</if>	
+	</sql>
+	
+	<sql id="searchage">
+			<if test="searchage == 1">
+				AND TBL_MEET.MEET_AGE = 1
+			</if>
+			<if test="searchage == 2">
+				AND TBL_MEET.MEET_AGE = 2
+			</if>
+			<if test="searchage == 3">
+				AND TBL_MEET.MEET_AGE = 3
+			</if>
+			<if test="searchage == 4">
+				AND TBL_MEET.MEET_AGE = 4
+			</if>
+			<if test="searchage == 5">
+				AND TBL_MEET.MEET_AGE = 5
+			</if>
+			<if test="searchage == 6">
+				AND TBL_MEET.MEET_AGE = 6
+			</if>
+			<if test="searchage == 7">
+				AND TBL_MEET.MEET_AGE = 7
+			</if>
+			<if test="searchage == 8">
+				AND TBL_MEET.MEET_AGE = 8
+			</if>
+	</sql>	
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_MEET ORDER BY MEET_NO
+	</select>
+	
+	<select id="selectmeetlist" resultType="MeetVO">
+		SELECT TBL_MEET.*, COUNT(*) AS MEET_REQ, SUM(CASE WHEN TBL_MTAPPLY.MTAPPLY_YN = '승낙' THEN 1 ELSE 0 END) AS MEET_NOW FROM
+		TBL_MEET
+		INNER JOIN TBL_MTAPPLY ON TBL_MEET.MEET_NO = TBL_MTAPPLY.MEET_NO
+		WHERE TBL_MEET.MEET_STTS != 'N'
+		<include refid="search"/>
+		<include refid="searchmenu"/>
+		<include refid="searchfm"/>
+		<include refid="searchage"/>
+		GROUP BY TBL_MEET.MEET_NO 
+		ORDER BY TBL_MEET.MEET_NO DESC
+		LIMIT #{curPage}, #{perPage}
+	</select>
+
+	<select id="selectmeet" resultType="MeetVO">
+		SELECT *, 
+		(SELECT COUNT(*) FROM TBL_MTAPPLY WHERE MEET_NO = #{meetNo}
+		AND MTAPPLY_YN = '승낙') MEET_NOW
+		FROM TBL_MEET
+		WHERE MEET_NO = #{meetNo}
+	</select>
+	
+	<insert id="insertmeet">
+	INSERT INTO TBL_MEET
+	(MEET_SJ, MEM_NICK, MEET_TIME, MEET_AREA, MEET_MENU, MEET_FM, MEET_AGE, MEET_MAX, MEET_CN, MEET_MAPX, MEET_MAPY)
+	VALUES (#{meetSj}, #{memNick}, now(), #{meetArea}, #{meetMenu}, #{meetFm}, #{meetAge}, #{meetMax}, #{meetCn}, #{meetMapx}, #{meetMapy})
+	</insert>
+	
+	<update id="updatemeet">
+	UPDATE TBL_MEET SET 
+	MEET_SJ=#{meetSj}, MEET_CN=#{meetCn}, MEET_AREA=#{meetArea}, MEET_MENU=#{meetMenu}, MEET_FM=#{meetFm}, MEET_AGE=#{meetAge}, MEET_MAX=#{meetMax}
+	WHERE MEET_NO=#{meetNo}
+	</update>
+	
+	<update id="deletemeet">
+	UPDATE TBL_MEET SET
+	MEET_STTS='n'
+	WHERE MEET_NO=#{meetNo}
+	</update>
+	
+	<insert id="insertmeetjang">
+	INSERT INTO TBL_MTAPPLY
+	(MEET_NO, MEM_NICK, MTAPPLY_YN)
+	VALUES (#{meetNo}, #{memNick}, '승낙')
+	</insert>
+	
+	<select id="selectlastinsertedmeetno" resultType="int">
+		SELECT LAST_INSERT_ID()
+	</select>
+	
+</mapper>

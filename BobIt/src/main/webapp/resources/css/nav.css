@@ -1,0 +1,48 @@
+ ul {
+    margin: 10px;
+}
+
+ ul.mainmenu > li {
+    margin: 10px 5px 0 5px;
+}
+
+ ul.mainmenu > li > a {
+    padding: 10px;
+    display: inline-block;
+    background-color: #6f5035;
+    color: var(--color-white);
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Cafe24SsurroundAir';
+    border-radius: 10px;
+    
+}
+
+ ul.mainmenu li:hover > a {
+    background-color: #6f5035;
+}
+
+ ul.mainmenu > li > ul {
+    display: none;
+}
+ul.submenu {
+	width: 90%;
+	margin: 0 auto;
+}
+ul.submenu a {
+    display: block;
+    padding: 10px;
+    background-color: #ad6c32;
+    text-align: center;
+    color: var(--color-white);
+        margin-top: 2px;
+}
+ul.submenu li:hover > a{
+	background-color: #6f5035;
+    text-decoration: underline;
+    
+}
+
+
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_MEMBER ORDER BY MEM_ID
+	</select>
+
+	<select id="selectmemberlist" resultType="MemberVO">
+		SELECT * FROM
+			<!-- (SELECT sub.*, ROWNUM rnum FROM
+ 				(<include refid="search"></include>) sub)				
+ 		<if test="perPage != 0">
+ 		<![CDATA[ 
+		WHERE rnum > ((#{page} -1) * #{perPage}) AND rnum <= (#{page} * #{perPage})
+		]]>
+		</if> -->
+				TBL_MEMBER
+				ORDER BY MEM_ID DESC
+				LIMIT #{curPage}, #{perPage}		
+	</select>
+
+	<select id="selectmember" resultType="MemberVO">
+		SELECT * FROM TBL_MEMBER
+		WHERE MEM_NICK = #{memNick}
+	</select>
+	
+	<insert id="insertmember">
+	INSERT INTO TBL_MEMBER
+	(MEM_NICK, MEM_ID, MEM_PWD, MEM_MAIL, MEM_FM, MEM_AGE, MEM_AREA, MEM_IMG)
+	VALUES (#{memNick}, #{memId}, #{memPwd},  #{memMail}, #{memFm}, #{memAge}, #{memArea}, 'bobit.jpg')
+	</insert>
+	
+	<update id="updatemember">
+	UPDATE TBL_MEMBER SET 
+	MEM_PWD=#{memPwd}, MEM_MAIL=#{memMail}, MEM_AREA=#{memArea}
+	WHERE MEM_NICK=#{memNick}
+	</update>
+	
+	<update id="deletemember">
+	UPDATE TBL_MEMBER SET
+	MEM_CHECK='탈퇴'
+	WHERE MEM_NICK=#{memNick}
+	</update>
+	
+	<update id="kickmember">
+	UPDATE TBL_MEMBER SET
+	MEM_CHECK='추방'
+	WHERE MEM_NICK=#{memNick}
+	</update>
+	
+	<insert id="addmember">
+	INSERT INTO TBL_MEMBER
+	(MEM_NICK, MEM_ID, MEM_PWD, MEM_MAIL, MEM_FM, MEM_AGE, MEM_AREA, MEM_IMG)
+	VALUES (#{memNick}, #{memId}, #{memPwd},  #{memMail}, #{memFm}, #{memAge}, #{memArea}, 'bobit.jpg')
+	</insert>
+	
+	<update id="updatememberimg">
+	UPDATE TBL_MEMBER SET
+	MEM_IMG = #{MEM_IMG}
+	WHERE MEM_NICK = #{MEM_NICK}
+	</update>
+	
+</mapper>

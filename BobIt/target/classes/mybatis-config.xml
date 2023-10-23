@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="me.bobit.myapp.board.service.BoardVO" alias="BoardVO"/>
+		<typeAlias type="me.bobit.myapp.member.service.MemberVO" alias="MemberVO"/>		
+		<typeAlias type="me.bobit.myapp.meet.service.MeetVO" alias="MeetVO"/>
+  		<typeAlias type="me.bobit.myapp.mtapply.service.MtapplyVO" alias="MtapplyVO"/>
+  		<typeAlias type="me.bobit.myapp.board.service.AttVO" alias="AttVO"/>
+  		<typeAlias type="me.bobit.myapp.alert.service.AlertVO" alias="AlertVO"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mybatis/board.xml"/>
+		<mapper resource="mybatis/member.xml"/>
+		<mapper resource="mybatis/blame.xml"/>
+		<mapper resource="mybatis/meet.xml"/>
+  		<mapper resource="mybatis/mtapply.xml"/>
+  		<mapper resource="mybatis/login.xml"/>
+		<mapper resource="mybatis/alert.xml"/>
+
+	</mappers>
+</configuration>

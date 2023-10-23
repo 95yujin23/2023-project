@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+ 	<sql id="search">
+			<if test="search == 1">
+				AND BOARD_SJ LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+			<if test="search == 2">
+				AND BOARD_CN LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+			<if test="search == 3">
+				AND MEM_NICK =#{keyword}
+			</if>
+	</sql> 
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_BOARD 
+		WHERE BOARD_TYPE='A'
+		<include refid="search"/>
+		AND BOARD_USE='Y'
+		AND BOARD_NT='N'
+		ORDER BY BOARD_NO
+	</select>
+
+	<select id="selectboardlist" resultType="BoardVO">
+		SELECT TBL_BOARD.*, COUNT(TBL_ATT.BOARD_NO) AS BOARD_ATCH 
+		FROM TBL_BOARD LEFT JOIN TBL_ATT ON TBL_BOARD.BOARD_NO = TBL_ATT.BOARD_NO 
+		WHERE TBL_BOARD.BOARD_TYPE='A'
+		<include refid="search"/>
+		AND TBL_BOARD.BOARD_USE='Y'
+		AND TBL_BOARD.BOARD_NT='N'
+		GROUP BY TBL_BOARD.BOARD_NO
+		ORDER BY TBL_BOARD.BOARD_NO DESC	
+		LIMIT #{curPage}, #{perPage}
+	</select>
+
+	<select id="selectboard" resultType="BoardVO">
+		SELECT * FROM TBL_BOARD
+		WHERE BOARD_NO = #{boardNo} AND BOARD_TYPE='A' 
+		AND BOARD_USE='Y' 
+	</select>
+	
+	<insert id="insertboard">
+	INSERT INTO TBL_BOARD
+	(MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE)
+	VALUES (#{memNick}, #{boardSj}, #{boardCn},  now())
+	</insert>
+	
+	<update id="updateboard">
+	UPDATE TBL_BOARD SET 
+	BOARD_SJ=#{boardSj}, BOARD_CN=#{boardCn}
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='A'
+	</update>
+	
+	<update id="deleteboard">
+	UPDATE TBL_BOARD SET
+	BOARD_USE='N'
+	WHERE BOARD_NO=#{boardNo} AND BOARD_TYPE='A'
+	</update>
+	
+	<select id="lastinsertedboardno" resultType="Integer">
+		SELECT LAST_INSERT_ID()
+	</select>
+	
+	<insert id="insertfile" parameterType="hashMap">
+		INSERT INTO TBL_ATT (ATT_NAME, ATT_ORGNAME, BOARD_NO
+		) VALUES (
+		#{ATT_NAME},
+		#{ATT_ORGNAME},
+		#{BOARD_NO})
+	</insert>
+	
+	<select id="selectfilelist" resultType="hashMap">
+	SELECT *
+	  FROM TBL_ATT
+	 WHERE BOARD_NO = #{boardNo}
+	 ORDER BY ATT_NO
+	</select>
+
+	<select id="selectfile" resultType="hashMap">
+	SELECT ATT_NAME, ATT_ORGNAME
+		FROM TBL_ATT
+		WHERE ATT_NO = #{att_no}
+	</select>	
+	
+	<insert id="insertnotice">
+	INSERT INTO TBL_BOARD
+	(MEM_NICK, BOARD_SJ, BOARD_CN, BOARD_DATE, BOARD_NT)
+	VALUES (#{memNick}, #{boardSj}, #{boardCn},  now(), 'Y')
+	</insert>
+	
+	<select id="noticetotal" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_BOARD 
+		WHERE BOARD_NT='Y'
+		<include refid="search"/>
+		AND BOARD_USE='Y'
+	</select>
+	
+	<select id="selectnoticelist" resultType="BoardVO">
+	SELECT TBL_BOARD.*, COUNT(TBL_ATT.BOARD_NO) AS BOARD_ATCH 
+		FROM TBL_BOARD LEFT JOIN TBL_ATT ON TBL_BOARD.BOARD_NO = TBL_ATT.BOARD_NO 
+		WHERE TBL_BOARD.BOARD_TYPE='A'
+		<include refid="search"/>
+		AND TBL_BOARD.BOARD_USE!='N'
+		AND TBL_BOARD.BOARD_NT='Y'
+		GROUP BY TBL_BOARD.BOARD_NO
+		ORDER BY TBL_BOARD.BOARD_NO DESC	
+		LIMIT #{curPage}, #{perPage}
+	</select>
+	
+	<select id="selectnotice" resultType="BoardVO">
+	SELECT *
+	FROM TBL_BOARD
+	WHERE BOARD_NT = 'Y'
+	AND BOARD_NO = #{boardNo}
+	</select>
+	
+	<select id="myboardtotal" resultType="Integer">
+		SELECT COUNT(*) FROM <!-- (<include refid="search"></include>)  -->
+		TBL_BOARD 
+		WHERE BOARD_TYPE='A'
+		AND BOARD_USE='Y'
+		AND MEM_NICK = #{memNick}
+	</select>
+	
+	<select id="myboard" resultType="BoardVO">
+	SELECT TBL_BOARD.*, COUNT(TBL_ATT.BOARD_NO) AS BOARD_ATCH 
+		FROM TBL_BOARD LEFT JOIN TBL_ATT ON TBL_BOARD.BOARD_NO = TBL_ATT.BOARD_NO 
+		WHERE TBL_BOARD.BOARD_TYPE='A'
+		AND TBL_BOARD.BOARD_USE!='N'
+		AND TBL_BOARD.BOARD_NT='N'
+		AND TBL_BOARD.MEM_NICK = #{memNick}
+		GROUP BY TBL_BOARD.BOARD_NO
+		ORDER BY TBL_BOARD.BOARD_NO DESC
+		LIMIT #{curPage}, #{perPage}
+	</select>
+	
+		<!-- 게시판 조회수 -->
+    <update id="boardHit" parameterType="int" >
+    	UPDATE TBL_BOARD SET
+    	BOARD_HIT = BOARD_HIT+1
+    	WHERE BOARD_NO = #{boardNo}
+    </update>
+	
+	
+</mapper>

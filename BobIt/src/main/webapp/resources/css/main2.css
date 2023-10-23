@@ -1,0 +1,1004 @@
+@font-face {
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: middle;
+	box-sizing: border-box;
+	word-break: keep-all;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #000
+	font-family: 'Cafe24SsurroundAir';
+}
+/* 초기화 코드 끝*/
+
+/* 변수지정 - 컬러 외 */
+ :root {
+    --color-primary: #6f5035;
+    --color-gr100: #ddd;
+    --color-white: #fff;
+    --color-bg100: #f6f8fa;
+    --color-gray200: #2a3038; /*footer bg color*/
+    --color-basic: #333;
+    --color-navc: #b58a64;
+    --border-radius: 5px;
+    --border-radius2: 10px;
+}
+
+/* header  */
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 2px solid #2a3038;
+}
+/* UTIL */
+.toploganArea .login {
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--color-white);
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	display: inline-block;
+	height: 35px;
+	margin-left: 15px;
+	padding: 0 23px;
+	border-radius: 6px;
+	background-color: var(--color-primary);
+	line-height: 35px;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.toploganArea .signUp {
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	display: inline-block;
+	margin-left: 30px;
+	font-family: 'Cafe24SsurroundAir';
+	color: var(--color-basic);
+}
+
+.toploganArea .message {
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--color-basic);
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	display: inline-block;
+	height: 35px;
+	margin-left: 10px;
+	padding: 0 5px;
+	border-radius: 6px;
+	line-height: 35px;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.toploganArea .mypage {
+	height: 35px;
+	vertical-align: middle;
+}
+
+.toploganArea .myPage img {
+	width: 25px;
+}
+/* main */
+.sloganArea {
+	padding-top: 140px;
+	-webkit-box-flex: 0;
+	display: flex;
+	flex-direction: column;
+	background: var(--color-bg100);
+}
+
+.sloganArea .sloganInner {
+	display: block;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.sloganArea .sloganInner  img {
+	width: 100%
+}
+
+.sloganArea .sloganInner div {
+	margin: 20px;
+}
+
+.color-wh {
+	color: var(--color-white)
+}
+
+.textcenter {
+	text-align: center;
+}
+
+.title {
+	font-size: 40px;
+	font-weight: 700;
+	letter-spacing: -1px;
+	line-height: 1.21;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.title span {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.explanation {
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: -1px;
+	line-height: 1.21;
+	padding: 20px 0;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.buttonBox {
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.buttonBox .button {
+	display: block;
+	-webkit-box-flex: 0;
+	width: 100%;
+	height: 54px;
+	border-radius: var(--border-radius);
+	background-color: var(--color-primary);
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	line-height: 54px;
+	color: var(--color-white);
+}
+
+.buttonBox .button+.button {
+	margin-top: 12px;
+}
+
+.buttonBox .-bgWhite {
+	border: 1px solid var(--color-gr100);
+	background-color: var(--color-white);
+	color: var(--color-basic);
+}
+
+/* image Area2 */
+.introArea .imagesSection {
+	position: relative;
+	display: flex;
+	height: 540px;
+	background: url(/img/bg_intro.jpg) center top no-repeat;
+	background-size: cover;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+}
+
+.seoList li {
+	margin: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.seoList li img {
+	width: 100%;
+	border-radius: var(--border-radius2);
+}
+
+.title2 {
+	display: block;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: -1px;
+	padding: 10px 0;
+	line-height: 1.21;
+}
+
+/* aslide */
+#aside {
+	width: 100%;
+	min-height: 800px;
+	display: flex;
+}
+
+#aside nav {
+	width: 150px;
+	min-height: 800px;
+	box-sizing: border-box;
+	background-color: var(--color-navc);
+}
+
+/* nav */
+ .nav > ul > li > a {
+    display: block;
+    padding: 10px;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: var(--color-white);
+    font-family: 'Cafe24SsurroundAir';
+}
+.nav > ul > li > a:hover {
+    background-color: #8F7B69;
+}
+.nav > ul > li > ul {
+    display: none;
+    height: 600px;
+}
+.nav > ul > li > ul > li > a {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Cafe24SsurroundAir';
+}
+.nav > ul > li > ul > li > a:hover {
+    background-color: #8F7B69;
+}
+/* 자바스크립트용 CSS */
+.nav > ul > li > ul {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: all 400ms;
+}
+/* session */
+.board_wrap {
+	position: relative;
+	z-index: 3;
+	width: 90%;
+    margin: auto;
+}
+.board_wrap h1 {
+	font-size: 80px;
+	font-family: 'Cafe24SsurroundAir';
+	padding-top: 350px;
+	padding-right: 250px;
+	/* padding-right: 500px;
+	text-align: right; */
+}
+
+.board_wrap p {
+	font-size: 35px;
+	font-family: 'Cafe24SsurroundAir';
+	padding-top: 20px;
+}
+
+.board_wrap .slide_link {
+	padding-right: 250px;
+	padding-top: 500px;
+}
+
+.board_wrap .slide_link a {
+	font-size: 10px;
+	font-family: 'Cafe24SsurroundAir';
+	padding-top: 20px;
+}
+
+.board_wrap .btn-link {
+	width: 200px;
+	height: 50px;
+	border-radius: 20px;
+}
+#slider {
+    width: 90%;
+    min-height: 800px;
+    margin: auto;
+}
+.board_wrap #slider span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 10px 20px;
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------*/
+/* .board_wrap {
+	width: 100%;
+	margin: 100px auto;
+} */
+
+.board_title {
+	margin-bottom: 25px;
+	margin-top: 40px;
+	font-family: 'Cafe24SsurroundAir';
+	display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+}
+
+.board_title strong {
+	font-size: 2.5rem;
+}
+
+.board_title p {
+	margin-top: 5px;
+	font-size: 0.8rem;
+}
+
+.bt_wrap {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 0;
+}
+
+.bt_wrap a {
+	display: inline-block;
+	min-width: 60px;
+	padding: 10px;
+/* 	border: 2px solid #000; */
+	border-radius: 7px;
+	font-size: 1.2rem;
+}
+.bt_wrap a button{
+	border: none;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.bt_wrap a:first-child {
+	margin-left: 0;
+}
+
+.bt_wrap a.on {
+	background: #000;
+	color: #fff;
+}
+
+.board_list {
+	width: 100%;
+	border-top: 2px solid #000;
+}
+
+.board_list>div {
+	border-bottom: 1px solid #ddd;
+	font-size: 0;
+}
+
+.board_list>div.top {
+	border-bottom: 1px solid #999;
+}
+
+.board_list>div:last-child {
+	border-bottom: 1px solid #000;
+}
+
+.board_list>div>div {
+	display: inline-block;
+	padding: 15px 0;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.board_list>div.top>div {
+	font-weight: 600;
+}
+
+.board_list .num {
+	width: 10%;
+}
+
+.board_list .title {
+	width: 60%;
+	text-align: left;
+}
+
+.board_list .top .title {
+	text-align: center;
+}
+
+.board_list .writer {
+	width: 10%;
+}
+
+.board_list .date {
+	width: 10%;
+}
+
+.board_list .count {
+	width: 10%;
+}
+
+.board_page {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.board_page a {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	border-left: 0;
+	line-height: 100%;
+}
+
+.board_page a.bt {
+	padding-top: 10px;
+	font-size: 1.2rem;
+	letter-spacing: -1px;
+}
+
+.board_page a.num {
+	padding-top: 9px;
+	font-size: 1.4rem;
+}
+
+.board_page a.num.on {
+	border-color: #000;
+	background: #000;
+	color: #fff;
+}
+
+.board_page a:first-child {
+	border-left: 1px solid #ddd;
+}
+
+.board_view {
+	width: 100%;
+	border-top: 2px solid #000;
+}
+
+.board_view .title {
+	padding: 20px 15px;
+	border-bottom: 1px dashed #ddd;
+	font-size: 2rem;
+}
+
+.board_view .info {
+	padding: 15px;
+	border-bottom: 1px solid #999;
+	font-size: 0;
+}
+
+.board_view .info dl {
+	position: relative;
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.board_view .info dl:first-child {
+	padding-left: 0;
+}
+
+.board_view .info dl::before {
+	content: "";
+	position: absolute;
+	top: 1px;
+	left: 0;
+	display: block;
+	width: 1px;
+	height: 13px;
+	background: #ddd;
+}
+
+.board_view .info dl:first-child::before {
+	display: none;
+}
+
+.board_view .info dl dt, .board_view .info dl dd {
+	display: inline-block;
+	font-size: 1.4rem;
+}
+
+.board_view .info dl dt {
+	
+}
+
+.board_view .info dl dd {
+	margin-left: 10px;
+	color: #777;
+}
+
+.board_view .cont {
+	padding: 15px;
+	border-bottom: 1px solid #000;
+	line-height: 160%;
+	font-size: 1.4rem;
+}
+
+.board_write {
+	border-top: 2px solid #000;
+}
+
+.board_write .title, .board_write .info {
+	padding: 15px;
+}
+
+.board_write .info {
+	border-top: 1px dashed #ddd;
+	border-bottom: 1px solid #000;
+	font-size: 0;
+}
+
+.board_write .title dl {
+	font-size: 0;
+}
+
+.board_write .info dl {
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+}
+
+.board_write .title dt, .board_write .title dd, .board_write .info dt,
+	.board_write .info dd {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.4rem;
+}
+
+.board_write .title dt, .board_write .info dt {
+	width: 100px;
+}
+
+.board_write .title dd {
+	width: calc(100% - 100px);
+}
+
+.board_write .title input[type="text"], .board_write .info input[type="text"],
+	.board_write .info input[type="password"] {
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.board_write .title input[type="text"] {
+	width: 80%;
+}
+
+.board_write .cont {
+	border-bottom: 1px solid #000;
+}
+
+.board_write .cont textarea {
+	display: block;
+	width: 100%;
+	height: 300px;
+	padding: 15px;
+	box-sizing: border-box;
+	border: 0;
+	resize: vertical;
+}
+
+td{
+	font-size: 15px;
+	text-align: left;
+}
+
+.board_list tr th,td{
+	border-bottom: 2px solid #ccc;
+	height: 40px;
+	font-family: 'Cafe24SsurroundAir';
+}
+.tf-bor-none > tr td{
+	border: none;
+}
+.tr-last{
+	height: 300px;
+}
+.inp-no th{
+	padding-right: 20px;
+}
+.td-cen td{
+	text-align: center;
+	padding: 5px;
+	
+}
+.inp-no input{
+	border: none;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.col2{
+	width: 1280px;
+	height: 40px;
+	background: #fff;
+}
+.col4{
+	font-family: 'Cafe24SsurroundAir';
+}
+textarea{
+	width: 1280px;
+	overflow:scroll;
+	background: #fff;
+}
+
+.btn-bd{
+	width: 80px;
+	height: 40px;
+	border-radius: 6px;
+	background-color: var(--color-primary);
+	color: var(--color-white);
+}
+
+#file-inputs input,
+#file-inputs button {
+	margin-top: 5px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 3px;
+    font-family: 'Cafe24SsurroundAir';
+}
+.add-file{
+	text-align: right;
+}
+#add-file-input{
+	background-color: #eee;
+	padding: 3px;
+	border-radius: 5px;
+	font-family: 'Cafe24SsurroundAir';
+}
+/*----------------------------------------------------------------------------------------*/
+.full-item{
+	height: 80px;
+	text-align: center;
+}
+.d-flex select {
+	width: 120px;
+	height: 50px;
+	font-family: 'Cafe24SsurroundAir';
+}
+.form-control{
+	width: 1100px;
+	height: 44px;
+	font-family: 'Cafe24SsurroundAir';
+}
+.sea-btn{
+	width: 100px;
+	height: 50px;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+ul.pagination {
+    list-style: none;
+    text-align: center; /* 媛��슫�뜲 �젙�젹�쓣 �쐞�빐 text-align �냽�꽦 異붽� */
+    margin-top: 10px; /* �븘�슂�븳 寃쎌슦 �쐞履� �뿬諛� 異붽� */
+}
+
+.pagination li {
+    display: inline; /* 媛� �럹�씠吏� 踰덊샇 �빆紐⑹쓣 �씤�씪�씤�쑝濡� �몴�떆 */
+    margin-right: 3px;
+}
+
+.pagination li a {
+    float: none; /* float �빐�젣 */
+    display: inline-block; /* �씤�씪�씤 釉붾줉 �슂�냼濡� 蹂�寃쏀븯�뿬 以묒븰 �젙�젹 */
+    color: #000;
+    font: bold 14px tahoma;
+    text-align: center;
+    text-decoration: none;
+    left: 50%;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+
+/* footer */
+footer {
+	width: 100%;
+    display: flex;
+	background: var(--color-gray200);
+	padding: 10px 0;
+	text-align: center;
+	color: var(--color-white)
+}
+
+#footer .footer1 {
+    width: 20%;
+    height: 80px;
+}
+#footer .footer1 h4 {
+    font-size: 30px;
+    color: var(--color-bg100);
+    padding: 32px 30px;
+    font-family: 'Cafe24SsurroundAir';
+}
+#footer .footer2 {
+    width: 80%;
+}
+#footer .footer2 .footer2-1 {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+#footer .footer2 .footer2-1 ul {
+    padding-top: 24px;
+}
+#footer .footer2 .footer2-1 li {
+    display: inline-block;
+    border-right: 1px solid #fff;
+}
+#footer .footer2 .footer2-1 li:last-child {
+    border: 0;
+}
+#footer .footer2 .footer2-1 li a {
+    padding: 10px;
+	color: var(--color-bg100);
+	font-family: 'Cafe24SsurroundAir';
+}
+#footer .footer2 .footer2-1 li a:hover {
+    text-decoration: underline;
+}
+#footer .footer2 .footer2-2 {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    font-family: 'Cafe24SsurroundAir';
+}
+@media screen and (min-width:768px) {
+	.sloganArea {
+		padding-top: 140px;
+		-webkit-box-flex: 0;
+		display: flex;
+		height: 700px;
+		background: var(--color-bg100);
+	}
+	.sloganArea .sloganInner {
+		display: flex;
+		justify-content: space-between;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	.sloganArea .sloganInner  img {
+		width: 95%
+	}
+	.buttonBox {
+		display: -webkit-box;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin-top: 20px;
+	}
+	.seoList {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		min-height: 500px;
+		padding: 100px 0;
+	}
+	.seoList li {
+		padding: 15px;
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.sloganArea .sloganInner {
+		display: flex;
+		justify-content: space-between;
+		max-width: 1320px;
+		margin: 0 auto;
+	}
+	.sloganArea .sloganInner  img {
+		width: auto
+	}
+	.buttonBox {
+		display: flex;
+		flex-wrap: wrap;
+		width: 420px;
+		margin-top: 20px;
+	}
+	
+	/* popup */
+.popup-view {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: #ffdfbf;
+    border: 4px solid #ff6d6d;
+    padding: 20px;
+    display: none;
+    border-radius: 10px;
+    text-align: center;
+}
+.popup-view h3 {
+    font-size: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff6d6d;
+    color: #ff6d6d;
+    font-family: 'Cafe24SsurroundAir';
+}
+.popup-view p{
+	margin-top: 30px;
+	line-height: 2.2rem;
+	font-size: 15px;
+	font-family: 'Cafe24SsurroundAir'
+}
+.popup-close {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #ff6d6d;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    font-family: 'Cafe24SsurroundAir'
+}
+
+.sliderWrap {
+	position: relative;
+	z-index: 3;
+	width: 90%;
+    margin: auto;
+}
+
+.imgBoardWrap{
+	position: relative;
+    padding: 0 0 65px;
+    margin-top: 50px!important;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.imgBoardWrap ul.imgBoardList{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 26px 25px;	
+	margin-bottom: 25px!important;
+}
+.imgBoardWrap ul.imgBoardList li.listItem{
+	box-sizing: border-box;
+	display: list-item;
+	text-align: -webkit-match-parent;
+	border-radius: 20px;
+	border: 1px solid #ddd;
+	height: 280px;
+}
+.itemImg{
+	position: relative;
+	text-align: center;
+	width: 250px;
+	height: 160px;
+	overflow: hidden;
+	border-radius: 20px 20px 0 0;
+	background-color: #ccc;
+}
+.itemImg img{
+	 position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.itemIcon{
+	display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ffc;
+    margin-top: 45px;
+}
+}
+	
+}
+.itemName{
+	position: relative;
+    padding: 11px 12px 14px;
+    background-color: #eee;
+    border-radius: 0 0 20px 20px;
+    width: 180px;
+	height: 50px;
+}
+.itemName p{
+	padding: 5px 10px;
+	font-size: 16px;
+}
+
+.siteMap{
+	display: flex;
+    align-items: center;
+    font-size: 16px;
+    letter-spacing: -0.045em;
+    color: #aaaaaa;
+    margin: 0 -20px;
+    white-space: nowrap;
+    position: absolute;
+    right: 5px;
+}
+
+.siteMap > li{
+	padding: 0 25px;
+    position: relative;
+    width: 5em;
+}
+
+.siteMap>li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #aaaaaa;
+    width: 4px;
+    height: 3px;
+    border-radius: 1000px;
+}
+
+.siteMap>li>ul li a {
+    display: block;
+}
+
+[class*=" xi-"], [class^=xi-] {
+    font-family: xeicon!important;
+    display: inline-block;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.xi-angle-down-min:before {
+    content: "\e942";
+}
